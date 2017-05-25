@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="renderer" content="webkit">
+    <title>jq轮播插件</title>
+    <link rel="stylesheet" href="css/jqSlide.css">
+</head>
+<body>
+<div class="carsouel">
+    <ul class="banner-big clearfix">
+        <li>
+            <a href="">
+                <img src="images/banner-01.jpg" alt="">
+            </a>
+        </li>
+        <li>
+            <a href="">
+                <img src="images/banner-02.jpg" alt="">
+            </a>
+        </li>
+        <li>
+            <a href="">
+                <img src="images/banner-03.jpg" alt="">
+            </a>
+        </li>
+        <li>
+            <a href="">
+                <img src="images/banner-04.jpg" alt="">
+            </a>
+        </li>
+        <li>
+            <a href="">
+                <img src="images/banner-05.jpg" alt="">
+            </a>
+        </li>
+    </ul>
+</div>
+</body>
+<script src="js/jquery-1.11.1.min.js"></script>
+<script src="js/jqSlide.js"></script>
+<script>
+    $(function(){
+        $(".carsouel").slide({
+            cricleBtn_w_h:30,
+            toggleBtn:true,
+            hoverPause:true
+        });
+    })
+
+</script>
+</html>

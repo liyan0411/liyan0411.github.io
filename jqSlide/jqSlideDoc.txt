@@ -1,0 +1,7 @@
+        cricleBtn :true,    //是否显示---底部圆点切换---按钮 （默认显示）
+        toggleBtn :true,    //是否显示----左右切换-----按钮（默认显示）
+        auto:true,          //是否自动播放（默认显示）
+        hoverPause:false,      //鼠标悬停时是否暂停播放状态（默认false不暂停）
+        speed:3000,         //自动播放速度（默认1秒）
+        cricleBtn_w_h:20,   //底部小圆点宽高（默认20px）
+        toggleBtn_w_h:20    //左右按钮大小（默认宽高20px）
