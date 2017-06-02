@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>日历</title>
+    <link rel="stylesheet" type="text/css" href="Calendar.css">
+    <style>
+    	.calendar{
+		    font-family: "-apple-system", "Helvetica Neue", "Roboto", "Segoe UI", sans-serif;
+		    width: 490px;
+		    text-align: center;
+		    overflow: hidden;
+		}
+		#calendar_weekday{
+		    width: 500px;
+		}
+		#calendar_weektitle{
+		    width: 500px;
+		}
+		.prev{
+		    cursor: pointer;
+		    float: left;
+		    /*            padding-right: px;*/
+		}
+		.next{
+		    cursor: pointer;
+		    float: right;
+		    /*            padding-right: px;*/
+		}
+
+		#calendar_weekday div,#calendar_weektitle div{
+		    border-bottom: 1px solid #cccccc;
+		    font-size: 11px;
+		    font-family: "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
+		}
+		#calendar_weekday div{
+		    color: #adadad;
+		}
+		#calendar_weekday > div:hover{
+		    background-color: #ffcd3c;
+		    opacity: .5;
+		}
+		#regis,#instalment{
+		    line-height: 35px;
+		    font-family: "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
+		    font-size: 14px;
+		    width: 490px;
+		    padding-left: 20px;
+		}
+		#regis{
+		    background-color: #ffd96a;
+		    height: 40px;
+		}
+		#instalment{
+		    border-bottom: 1px solid red;
+		    /*line-height: 30px;*/
+		    height: 36px;
+		}
+    </style>
+    <script type="text/javascript" src="Calendar.js"></script>
+
+</head>
+<body>
+    <div id="calendar" class="calendar">
+        <div class="prev">
+            <button id="prev_M">上个月</button>
+        </div>
+
+        <span id="month"></span>月<span id="year"></span>年
+
+        <div class="next">
+            <button id="next_M">下个月</button>
+        </div>
+    </div>
+
+    <div style="clear:both"></div>
+    <!--日历主体-->
+    <div id="calendar_weektitle"></div>
+    <div id="calendar_weekday"></div>
+    <div style="clear:both;"></div>
+    <!--报名信息-->
+    <div id="regis"><span id="reg_i" style="color:green;">●</span> 是否可报名</div>
+    <div id="instalment">月份/批次</div>
+</body>
+<script>
+	/**
+	 * Created by heart on 2017/4/26.
+	 */
+	window.onload = function(){
+	    //为日历写入月份头部
+	    function Calendar(){
+	        var weeks = ['日', '一', '二', '三', '四', '五', '六'];
+	        for(i = 0; i < weeks.length; i++){
+	            var div = document.createElement('div');
+	            div.id = 'week_' + i;
+	            div.innerHTML = weeks[i];
+	            div.style.width = '14%';
+	            div.style.height = '35px';
+	            div.style.lineHeight = div.style.height;
+	            div.style.backgroundColor = '#ccc';
+	            div.style.float = 'left';
+	            div.style.textAlign = 'center';
+	            document.getElementById('calendar_weektitle').appendChild(div);
+	        }
+	        
+	    }
+
+	    //构造原型对象
+	    Calendar.prototype = {
+	        //取闰年函数
+	        isLeap : function(year){
+	            return (year % 100 !== 0 && year % 4 == 0) || (year % 400 == 0);
+	        },
+	        //返回本年本月的天数
+	        getDaysNum : function(year, month) {
+	            var num = 31;           //大月
+	            switch (month) {
+	                case '2':
+	                    num = this.isLeap(year) ? 29 : 28;
+	                    break;         //小月
+	                case 4:
+	                case 6:
+	                case 9:
+	                case 11:
+	                    num = 30;
+	                    break;
+	            }
+	            return num;
+	        },
+	        //返回本月的第一天是周几
+	        getWeek : function(year, month){
+	            var d = new Date();
+	            // var m=d.getMonth()+1;
+	            // var y=d.getYear();
+
+	            d.setYear(year);
+	            d.setMonth(month-1);
+	            d.setDate(1);
+	            var weeks = ['7', '1', '2', '3', '4', '5', '6'];
+	            return weeks[d.getDay()];
+
+	        },
+	        //核心函数，写入日历
+	        show : function(year, month){
+	            var weekFirstDay = this.getWeek(year, month);
+	            var dayCount = this.getDaysNum(year, month);
+	            console.log(weekFirstDay);
+	            //得到本月头是周几，并在前面插入空天数
+	            if(weekFirstDay != '7'){
+	                for(var i = 0; i < weekFirstDay; i++){
+	                    var div_1 = document.createElement('div');
+	                    div_1.style.cursor = 'pointer';
+	                    div_1.innerHTML = '';
+	                    div_1.style.width = '14%';
+	                    div_1.style.height = '40px';
+	//                    div_1.style.lineHeight = div_1.style.height / 2;
+	                    div_1.style.float = 'left';
+	                    div_1.style.textAlign = 'center';
+	                    document.getElementById('calendar_weekday').appendChild(div_1);
+	                }
+	            }
+	            //得到本月的天数，按规则格式注入天数
+	            for(i = 0; i < dayCount; i++){
+	                var div_2 = document.createElement('div');
+	                div_2.style.cursor = 'pointer';
+	                div_2.id = 'day_' + year + '_' + month + '_' + (i + 1);
+	                console.log(div_2.id);
+	                div_2.innerHTML = i + 1 + '<br />';
+	                div_2.style.width = '14%';
+	                div_2.style.height = '40px';
+	//                div_2.style.lineHeight = div_2.style.height / 2;
+	                div_2.style.float = 'left';
+	                div_2.style.textAlign = 'center';
+	                document.getElementById('calendar_weekday').appendChild(div_2);
+	            }
+
+	        },
+	        //跳转上个月，月份减一
+	        PreMonth: function() {
+	            this.PreDraw(new Date(this.Year, this.Month - 2, 1));
+	        },
+	        //跳转下个月，月份加一
+	        NextMonth: function() {
+	            this.PreDraw(new Date(this.Year, this.Month, 1));
+	        },
+	        //重绘
+	        PreDraw: function(date) {
+	            this.Year = date.getFullYear();
+	            this.Month = date.getMonth() + 1;
+	            this.Draw();
+	        }
+	    };
+	    
+	    //对象实例化
+	    Calen = new Calendar();
+	    //获取本地时间
+	    var  data= new Date();
+	    m = data.getMonth()+1;
+	    y =data.getFullYear();
+	    d = data.getDate();
+	    //写入本月天数
+	    Calen.show(y,m);
+	    var today = document.getElementById('day_'+ y + '_'+ m + '_' + d);
+	    today.style.backgroundColor = '#ffcd3c';
+
+	    document.getElementById("year").innerHTML = y;
+	    document.getElementById("month").innerHTML = m;
+	    
+	    //跳转到下个月
+	    document.getElementById("next_M").onclick = function(){
+	        var  div=document.getElementById("calendar_weekday");
+	        div.innerHTML = "";
+	        if(m > 0&&m < 12){
+	            m += 1;
+	        }else if(m > 1){
+	            m = 1;
+	            y += 1;
+	        }else if(m == 12){
+	            m = 1;
+	            y += 1;
+	        }
+	        Calen.show(y, m);
+	        document.getElementById("year").innerHTML = y;
+	        document.getElementById("month").innerHTML = m;
+	    };
+
+	    //跳转到上一月
+	    document.getElementById("prev_M").onclick = function(){
+	        var div = document.getElementById("calendar_weekday");
+	        div.innerHTML="";
+	        if(m > 1 && m < 12){
+	            m -= 1;
+	        }else if(m <= 1){
+	            m = 12;
+	            y-=1;
+	        }else if(m == 12){
+	            m -= 1;
+	        }
+	        Calen.show(y, m);
+	        document.getElementById("year").innerHTML = y;
+	        document.getElementById("month").innerHTML = m;
+	    };
+	};
+</script>
+</html>
