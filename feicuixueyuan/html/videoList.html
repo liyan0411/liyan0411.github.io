@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>视频列表</title>
+    <link rel="stylesheet" href="../css/ext-all.css"/>
+    <link rel="stylesheet" href="../css/font-awesome/css/font-awesome.css"/>
+    <link rel="stylesheet" href="../css/fc-all.css"/>
+</head>
+<body style="padding:0 14px;">
+    <div class="xn_nowpath"></div>
+    <div>
+        <div class="xn_section_wrap">
+            <div class="xn_search_form" style="" id="mainSearchBox">
+                <button class="xn_btn xn_btn_primary" style="float:right; margin-right: 20px;" id="" onclick="videoAddAndEdit();">
+                    <i class="icon icon-plus"></i>&nbsp;&nbsp;添加
+                </button>
+            </div>
+        </div>
+        <div class="xn_section_wrap">
+            <div class="xn_section_title">
+                <span class="icon_wrap"><i class="icon-th"></i></span>
+                <span class="xn_title_name">视频列表</span>
+            </div>
+            <div id="mainTableBox"></div>
+        </div>
+    </div>
+
+</body>
+    <script type="text/javascript" src="../lib/jquery-1.8.3.min.js"></script>
+    <script type="text/javascript" src="../js/basicParameter.js"></script>
+    <script type="text/javascript" src="../lib/ext-all.js"></script>
+    <script type="text/javascript" src="../lib/PagingToolBar.js"></script>
+    <script type="text/javascript" src="../js/basicExtModule.js"></script>
+    <script type="text/javascript" src="../js/tools.js"></script>
+    <script type="text/javascript" charset="UTF-8">
+        var GLOBAL = GLOBAL || {};
+        Ext.onReady(function () {
+            //刷新页面重置grid
+            Ext.EventManager.onWindowResize(function () {
+                GLOBAL.videoGrid.getView().refresh()
+            });
+
+            //分页控件分页
+            GLOBAL.pageToolBar = Ext.create('PagingToolBar', {
+                id: 'pageToolBar',
+                onChange: function (pt, pageFirst, pageSize, type) {
+                    var pageStart = pageFirst / pageSize + 1;
+                    getVideoList(pageStart, pageFirst);
+                }
+            });
+
+            //视频类别选择store
+            GLOBAL.videoClassifyStore = Ext.create('Ext.data.Store', {
+                fields: ['sysId', 'eCode', 'titleZh']
+            });
+
+            //视频列表数据
+            GLOBAL.videoListStore = Ext.create('Ext.data.Store', {
+                fields: ['Vname', 'Vstate', 'ID', 'duration', 'createAt', 'Vtime', 'Vurl']
+            });
+
+            //视频列表表格
+            GLOBAL.videoGrid = Ext.create('Ext.grid.Panel', {
+                store: GLOBAL.videoListStore,
+                minHeight: BPR.gridMinHeight,
+                bbar: GLOBAL.pageToolBar,
+                id: 'mainGridId',
+                listeners: {
+                    render: function (g) {
+
+                    }
+                },
+                columns: [
+                    {header: '视频名称', width: 150, dataIndex: 'Vname'},
+                    {header: '绑定的课程', width: 150, dataIndex: 'Vstate', flex: 1},
+                    {text: '视频时长', width: 120, dataIndex: 'Vtime'},
+                    {header: '上传日期', width: 150, dataIndex: 'createAt'},
+                    {
+                        header: '操作', width: 200, dataIndex: 'ID',
+                        renderer: function (value, cellmeta, record) {
+
+                            if(record.data.Vstate != ''){
+                                return '<a class="xn_tablea" onclick="videoAddAndEdit(' + value + ')">编辑</a>'
+                            }else{
+                                return '<a class="xn_tablea" onclick="videoAddAndEdit(' + value + ')">编辑</a>'
+                                        + '<a class="xn_tablea" onclick="deleteVideo(' + value + ')">删除</a>';
+                            }
+
+
+                        }
+                    }
+                ],
+                minHeight: 320,
+                autoScroll: true,
+                renderTo: 'mainTableBox'
+            });
+
+            GLOBAL.searchbox = Ext.create('Ext.form.Panel', {
+                renderTo: 'mainSearchBox',
+                layout: 'hbox',
+                margin: '10',
+                items: [new Ext.custom.textfield({
+                    itemId: "name",
+                    name: "name",
+                    emptyText: '模糊查找:视频名称'
+                }), {
+                    xtype: 'panel',
+                    html: '<button class="xn_btn xn_btn_success" id="btn_search" onclick="getVideoList();">查&nbsp;询</button>'
+                }]
+
+            });
+
+            //敲击键盘enter触发搜索
+            $(document).keypress(function (e) {
+                if (e.keyCode == 13) {
+                    getVideoList();
+                }
+            })
+
+            //测试弹窗
+            //videoAddAndEdit();
+
+            //请求第一页数据
+            getVideoList();
+        });
+
+
+        //加载视频列表方法
+        function getVideoList(pageStart, pageFirst) {
+
+            //显示数据加载提示
+            msgTip = new Ext.LoadMask(Ext.getCmp('mainGridId'), {
+                msg: '数据加载中，请稍后...',
+                removeMask: true
+            });
+            msgTip.show();
+
+            $.ajax({
+                async: false,
+                url: BPR.domain + "/Handler/VideoHandler.ashx?action=showlist",
+                data: {
+                    searchText: GLOBAL.searchbox.down("#name").getValue(),
+                    pageStart: pageStart ? pageStart : 1
+                },
+                type: "POST",
+                dataType: "json"
+            }).done(function (result) {
+
+                errTip(result, function () {
+                    GLOBAL.pageToolBar.setPageSize(result.data.pageSize);
+
+                    GLOBAL.pageToolBar.loadPage(pageFirst ? pageFirst : 0, result.data.count);
+                    GLOBAL.videoListStore.loadData(result.data.list);
+                });
+            }).fail(function () {
+                Ext.Msg.alert("错误", "获取视频列表失败！");
+            }).always(function () {
+                //隐藏数据加载提示
+                msgTip.hide();
+            });
+        }
+
+
+        function videoAddAndEdit(videoId) {
+            //添加或修改视频弹窗
+            GLOBAL.videoEditWin = GLOBAL.userEditWin || new Ext.custom.basicWindow({
+                        title: '视频添加',
+                        width: 550,
+                        height: 280,
+                        items: [new Ext.form.Panel({
+                            width: '100%',
+                            height: '100%',
+                            bodyPadding: 10,
+                            border: 0,
+                            items: [{
+                                xtype: 'panel',
+                                layout: "hbox",
+                                margin: '20 0 0 0',
+                                items: [new Ext.custom.middletextfield({
+                                    margin: '0 0 0 30',
+                                    itemId: "videoSrc",
+                                    fieldLabel: '视频',
+                                    beforeLabelTextTpl: required,
+                                    labelAlign: 'right',
+                                    disabled: true,
+                                    emptyText: '选择要上传的视频'
+                                }), {
+                                    xtype: 'button',
+                                    margin: '0 0 0 10',
+                                    text: '点击上传',
+                                    itemId: "videoUpBtn",
+                                    handler: function () {
+                                        upLoad();
+                                    }
+                                }]
+                            }, {
+                                xtype: 'panel',
+                                layout: "hbox",
+                                items: [new Ext.custom.middletextfield({
+                                    margin: '10 0 0 30',
+                                    itemId: "videoName",
+                                    fieldLabel: '视频名称',
+                                    beforeLabelTextTpl: required,
+                                    labelAlign: 'right'
+                                }), {
+                                    xtype: 'panel',
+                                    margin: '10 0 0 10',
+                                    html: '<span style="color: #777;">60字以内</span>'
+                                }]
+                            }, {
+                                xtype: 'panel',
+                                layout: "hbox",
+                                items: [new Ext.custom.middletextfield({
+                                    margin: '10 0 0 30',
+                                    itemId: "time",
+                                    beforeLabelTextTpl: required,
+                                    fieldLabel: '视频时长',
+                                    labelAlign: 'right'
+                                }), {
+                                    xtype: 'panel',
+                                    margin: '10 0 0 10',
+                                    html: '<span style="color: #777;">填分钟数</span>'
+                                }]
+                            }, {
+                                layout: 'hbox',
+                                margin: '10 0 0 140',
+                                arrowAlign: 'right',
+                                items: [{
+                                    xtype: 'button',
+                                    margin: '10 0 0 10',
+                                    width: 80,
+                                    height: 30,
+                                    handler: function () {
+                                        //获取数据
+                                        var actionStr = GLOBAL.videoId ? 'update' : 'add';
+                                        //提交
+                                        $.ajax({
+                                            async: false,
+                                            url: BPR.domain + "/Handler/VideoHandler.ashx?action=" + actionStr,
+                                            type: "POST",
+                                            data: {
+                                                Vname: GLOBAL.videoEditWin.down("#videoName").getValue(),
+                                                Vtime: GLOBAL.videoEditWin.down("#time").getValue(),
+                                                Vurl: GLOBAL.videoEditWin.down("#videoSrc").getValue(),
+                                                ID: GLOBAL.videoId
+                                            },
+                                            dataType: "json"
+                                        }).done(function (data) {
+                                            errTip(data, function () {
+                                                Ext.Msg.alert("提示", "保存成功", function () {
+                                                    GLOBAL.videoEditWin.hide();
+                                                    GLOBAL.videoEditWin.down("#videoName").setValue('');
+                                                    GLOBAL.videoEditWin.down("#time").setValue('');
+                                                    GLOBAL.videoEditWin.down("#videoSrc").setValue('');
+                                                    getVideoList();
+                                                });
+                                            });
+                                        }).fail(function () {
+
+                                        }).always(function () {
+
+                                        });
+                                    },
+                                    style: 'background:#6EC131;border:0',
+                                    text: '确定'
+                                }, {
+                                    xtype: 'button',
+                                    margin: '10 0 0 30',
+                                    width: 80,
+                                    height: 30,
+                                    text: '取消',
+                                    handler: function () {
+                                        GLOBAL.videoEditWin.hide();
+                                    }
+                                }]
+                            }]
+                        })]
+                    });
+            GLOBAL.videoEditWin.show();
+
+            //如果传了id，则为编辑
+            if (videoId) {
+
+                var data = GLOBAL.videoGrid.getSelectionModel().getSelection()[0].data;
+
+                console.log(data);
+                GLOBAL.videoEditWin.down("#videoName").setValue(data.Vname);
+                GLOBAL.videoEditWin.down("#time").setValue(data.Vtime);
+                GLOBAL.videoEditWin.down("#videoSrc").setValue(data.Vurl);
+                GLOBAL.videoId = data.ID;
+            } else {
+                GLOBAL.videoId = '';
+            }
+            //GLOBAL.userEditWin.down("#toStatus").setValue(toStatus);
+        }
+        ;
+
+
+        //添加、上传视频
+        function upLoad() {
+            var dlg = new Ext.custom.uploadFileWin({
+                title: '视频上传',
+                customMaxSize: 1028 * 1024 * 1024,
+                customSetValueInput: "",
+                customUploadType: 0,
+                customFilefieldLabel:"文件",
+                customUrl: BPR.domain + "/Handler/UpLoadVideoHandler.ashx",
+                cbFn: function (result) {
+                    console.log(result);
+                    GLOBAL.videoEditWin.down("#videoSrc").setValue(result.cacheName);
+                    dlg.close();
+                    Ext.Msg.alert("温馨提示", "视频上传成功！");
+                }
+            }).show();
+        }
+
+
+        //删除视频
+        function deleteVideo(Id) {
+
+
+            //提交
+            $.ajax({
+                async: false,
+                url: BPR.domain + "/Handler/VideoHandler.ashx?action=delete",
+                type: "GET",
+                data: {
+                    ID: Id
+                },
+                dataType: "json"
+            }).done(function (data) {
+                //console.log(data);
+                errTip(data, function () {
+                    if (data && data.success) {
+                        Ext.Msg.alert("提示", "删除成功", function () {
+                            getVideoList();
+                        });
+
+                    }
+                });
+
+            }).fail(function () {
+
+            }).always(function () {
+
+            });
+        }
+
+
+    </script>
+</html>
