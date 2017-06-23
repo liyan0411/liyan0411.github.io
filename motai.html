@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>模态框</title>
+		<link rel="stylesheet" href="css/bootstrap.css" />
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.1/jquery.js"></script>
+		<script src="js/bootstrap.js"></script>
+		<style>
+			.mt{
+				width:100%;
+				height:100%;
+				position: absolute;
+				background: rgba(0,0,0,0.5);
+				top:0;
+				left:0;
+				display: none;
+			}
+			.content{
+				background: #009999;
+				width:400px;
+				height:300px;
+				border:2px solid #003333;
+				/*box-shadow: -2px 2px 5px #000;*/
+				box-shadow: -2px 2px 5px #000,2px -2px 5px #000;
+				margin: 50px auto;
+				position: relative;
+			}
+			.close{
+				width:40px;
+				height:40px;
+				border:1px solid #003333;
+				background: #fff;
+				border-radius: 50%;
+				text-align: center;
+				line-height: 36px;
+				position: absolute;
+				top:-20px;
+				right:-20px;
+			}
+		</style>
+	</head>
+	<body>
+		<button class="btn btn-info" id="btn">按钮</button>
+		<div class="mt">
+			<div class="content">
+				<p class='close'>X</p>
+				模态框
+				<button class="btn btn-success qr">确认</button>
+				<button class="btn btn-default qx">关闭</button>
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript">
+		var btn=document.getElementById("btn");
+		var mt=document.getElementsByClassName("mt")[0];
+		var qx=document.getElementsByClassName("qx")[0];
+		var qr=document.getElementsByClassName("qr")[0];
+		var close=document.getElementsByClassName("close")[0];
+		var content=document.getElementsByClassName("content")[0];
+		btn.onclick=function(){
+			mt.style.display="block";
+		}
+		qx.onclick=function(){
+			mt.style.display="none";
+		}
+		close.onclick=function(){
+			mt.style.display="none";
+		}
+		mt.onclick=function(){
+			mt.style.display="none";
+		}
+		qr.onclick=function(){
+			mt.style.display="block";
+		}
+		content.onclick=function(ev){
+			ev.stopPropagation();
+		}
+	</script>
+</html>
