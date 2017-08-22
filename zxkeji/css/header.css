@@ -12,7 +12,7 @@
 .header_nav_next li{width: 160px;height:35px;background: #36264a;line-height: 35px;padding-left: -60px;text-indent: 30px;font-weight: normal;font-size: 14px;position: relative;}
 .header_nav_next>li:hover{background: #3498db;text-indent: 40px;transition: text-indent 0.5s;}
 .header_nav_next>li:hover span{text-indent: 30px;display: block;}
-.cometop{width: 87px;height: 161px;position: fixed;right: 50px;bottom: 150px;display: none;}
+.cometop{width: 87px;height: 161px;position: fixed;right: 50px;bottom: 150px;display: none;z-index:999;}
 .cometop_one{width: 50px;height: 50px;background: url(../images/scroll_top_bg.png) no-repeat ;margin: 0 auto;cursor: pointer;}
 .cometop_one:hover{background-position: 0 -50px;transition: all 0.5s;}
 .cometop_two{background: url(../images/fixed_contactus.png) no-repeat top right;right:0;top:74px;width: 87px;height: 87px;cursor: pointer;position: absolute;}
