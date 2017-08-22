@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>课程管理</title>
+    <link rel="stylesheet" href="../css/ext-all.css"/>
+    <link rel="stylesheet" href="../css/font-awesome/css/font-awesome.css"/>
+    <link rel="stylesheet" href="../css/fc-all.css"/>
+    <link rel="stylesheet" href="../css/ClearButton.css"/>
+</head>
+<body class="xn-body">
+<div class="xn_nowpath"></div>
+<div>
+    <div class="xn_section_wrap">
+        <div class="xn_search_form" id="mainSearchBox">
+            <button class="xn_btn xn_btn_primary" style="float:right; margin-right: 23px;" onclick="window.open('editCourse.html');"><i class="icon icon-plus"></i>&nbsp;&nbsp;添加
+            </button>
+        </div>
+    </div>
+    <div class="xn_section_wrap">
+        <div class="xn_section_title">
+            <span class="icon_wrap"><i class="icon-th"></i></span>
+            <span class="xn_title_name">课程列表</span>
+        </div>
+        <div id="mainTableBox"></div>
+    </div>
+</div>
+</body>
+<script type="text/javascript" src="../lib/jquery-1.8.3.min.js"></script>
+<script type="text/javascript" src="../lib/ext-all.js"></script>
+<script type="text/javascript" src="../lib/PagingToolBar.js"></script>
+<script type="text/javascript" src="../js/basicParameter.js"></script>
+<script type="text/javascript" src="../js/basicExtModule.js"></script>
+<script type="text/javascript" src="../js/tools.js"></script>
+<script type="text/javascript" src="../lib/ClearButton.js"></script>
+<script type="text/javascript">
+    var GLOBAL = GLOBAL || {};
+    Ext.onReady(function () {
+        //刷新页面重置grid
+        Ext.EventManager.onWindowResize(function () {
+            GLOBAL.courseGrid.getView().refresh()
+        });
+
+        //分页控件分页
+        GLOBAL.pageToolBar = Ext.create('PagingToolBar', {
+            id: 'pageToolBar',
+            onChange: function (pt, pageFirst, pageSize, type) {
+                var pageStart = pageFirst / pageSize + 1;
+                getCourseList(pageStart, pageFirst);
+            }
+        });
+
+
+        //课程列表数据
+        GLOBAL.courseListStore = Ext.create('Ext.data.Store', {
+            fields: ['Cname', 'Cnumber', 'ID', 'onlineUser', 'CategoryOne', 'CategoryTwo', 'CategoryThree', 'upDateAt', 'createAt', 'isState', 'isTop']
+        });
+
+        //专业目录一级Store
+        GLOBAL.categoryStore1 = Ext.create('Ext.data.Store', {
+            fields: ['fatherId', 'sysId', 'title']
+        });
+
+        //专业目录二级Store
+        GLOBAL.categoryStore2 = Ext.create('Ext.data.Store', {
+            fields: ['fatherId', 'sysId', 'title']
+        });
+
+        //专业目录三级Store
+        GLOBAL.categoryStore3 = Ext.create('Ext.data.Store', {
+            fields: ['fatherId', 'sysId', 'title']
+        });
+
+        //获取专业目录
+        $.ajax({
+            async: false,
+            url: BPR.domain + "/Handler/CourseHandler.ashx?action=getcategory",
+            type: "GET",
+            data: '',
+            dataType: "json"
+        }).done(function (data) {
+            errTip(data, function () {
+                GLOBAL.categoryData = data.data;
+                var arr = [];
+                for (var i = 0; i < GLOBAL.categoryData.length; i++) {
+                    if (GLOBAL.categoryData[i].fatherId == 0) {
+                        arr.push(GLOBAL.categoryData[i]);
+
+                    }
+                };
+                GLOBAL.categoryStore1.loadData(arr);
+            });
+        }).fail(function () {
+
+        }).always(function () {
+
+        });
+
+        //课程列表表格
+        GLOBAL.courseGrid = Ext.create('Ext.grid.Panel', {
+            store: GLOBAL.courseListStore,
+            minHeight: BPR.gridMinHeight,
+            bbar: GLOBAL.pageToolBar,
+            id: 'mainGridId',
+            columns: [
+                {header: '课程名称', width: 150, dataIndex: 'Cname'},
+                {header: '课程代号', width: 150, dataIndex: 'Cnumber', flex: 1},
+                {text: '在学人数', width: 120, dataIndex: 'onlineUser'},
+                {
+                    header: '所属分类', width: 150, dataIndex: 'CategoryTwo',
+                    renderer: function (value, cellmeta, record) {
+                        for (var i = 0; i < GLOBAL.categoryData.length; i++) {
+                            if (GLOBAL.categoryData[i].sysId == value) {
+                                return GLOBAL.categoryData[i].title;
+                            }
+                        }
+                        ;
+                        //如果没有数据，则返回空
+                        return '';
+                    }
+                },
+                {header: '编辑日期', width: 150, dataIndex: 'upDateAt'},
+                {
+                    header: '状态', width: 150, dataIndex: 'isState',
+                    renderer: function (value, cellmeta, record) {
+                        var showText;
+                        if (value == 3) {
+                            showText = "已下架";
+                        } else if (value == 2) {
+                            showText = "在架";
+                        } else {
+                            showText = "草稿";
+                        }
+                        ;
+
+                        return showText;
+                    }
+                },
+                {
+                    header: '操作', width: 250, dataIndex: 'ID',
+                    renderer: function (value, cellmeta, record) {
+                        var sellText, stickText;
+                        if (record.data.isState == 2) {
+                            sellText = "下架";
+                        } else {
+                            sellText = "上架";
+                        }
+                        ;
+                        if (record.data.isTop) {
+                            stickText = "取消置顶";
+                        } else {
+                            stickText = "置顶";
+                        }
+                        ;
+                        var sellparameter = "'" + value + "','state'";
+                        var stickparameter = "'" + value + "','top'";
+                        var deleteparameter = "'" + value + "','delete'";
+                        return '<a class="xn_tablea" onclick="courseHandle(' + sellparameter + ')">' + sellText + '</a>'
+                                + '<a class="xn_tablea" onclick="courseEdit(' + value + ')">编辑</a>'
+                                + '<a class="xn_tablea" onclick="courseHandle(' + deleteparameter + ')">删除</a>'
+                                + '<a class="xn_tablea" onclick="courseHandle(' + stickparameter + ')">' + stickText + '</a>';
+                    }
+                }
+            ],
+            minHeight: 320,
+            autoScroll: true,
+            renderTo: 'mainTableBox'
+        });
+
+        GLOBAL.searchbox = Ext.create('Ext.form.Panel', {
+            renderTo: 'mainSearchBox',
+            layout: 'hbox',
+            margin: '10',
+            items: [new Ext.custom.textfield({
+                itemId: "courseName",
+                name: "courseName",
+                emptyText: '课程名称'
+            }), new Ext.custom.basicCombo({
+                width: 250,
+                fieldLabel: '专业选择',
+                itemId: 'CategoryOne',
+                labelAlign: 'right',
+                displayField: 'title',
+                valueField: 'sysId',
+                store: GLOBAL.categoryStore1,
+                plugins: ['clearbutton'],
+                listeners: {
+                    change: function (combo, newValue, oldValue, opts) {
+                        GLOBAL.searchbox.down("#CategoryTwo").setValue('');
+                        GLOBAL.searchbox.down("#CategoryThree").setValue('');
+
+                        if (newValue) {
+                            fid = newValue;
+
+                            var arr = [];
+                            for (var i = 0; i < GLOBAL.categoryData.length; i++) {
+                                if (GLOBAL.categoryData[i].fatherId == fid) {
+                                    arr.push(GLOBAL.categoryData[i]);
+                                }
+                            }
+                            ;
+                            GLOBAL.categoryStore2.loadData(arr);
+                        } else {
+                            GLOBAL.categoryStore2.loadData([]);
+                        }
+
+                    }
+                }
+            }), new Ext.custom.basicCombo({
+                itemId: 'CategoryTwo',
+                labelAlign: 'right',
+                displayField: 'title',
+                valueField: 'sysId',
+                store: GLOBAL.categoryStore2,
+                plugins: ['clearbutton'],
+                listeners: {
+                    change: function (combo, newValue, oldValue, opts) {
+                        GLOBAL.searchbox.down("#CategoryThree").setValue('');
+
+                        if (newValue) {
+                            fid = newValue;
+
+                            var arr = [];
+                            for (var i = 0; i < GLOBAL.categoryData.length; i++) {
+                                if (GLOBAL.categoryData[i].fatherId == fid) {
+                                    arr.push(GLOBAL.categoryData[i]);
+                                }
+                            }
+                            ;
+                            GLOBAL.categoryStore3.loadData(arr);
+                        } else {
+                            GLOBAL.categoryStore3.loadData([]);
+                        }
+
+
+                    }
+                }
+            }), new Ext.custom.basicCombo({
+                itemId: 'CategoryThree',
+                labelAlign: 'right',
+                displayField: 'title',
+                valueField: 'sysId',
+                store: GLOBAL.categoryStore3,
+                plugins: ['clearbutton']
+            }), {
+                xtype: 'panel',
+                html: '<button class="xn_btn xn_btn_success" id="btn_search" onclick="getCourseList();">查询</button>'
+            }]
+
+        });
+
+        //敲击键盘enter触发搜索
+        $(document).keypress(function (e) {
+            if (e.keyCode == 13) {
+                getCourseList();
+            }
+        })
+        //页面加载时，请求第一页数据
+        getCourseList();
+    });
+
+
+    //首次加载页面读取所有课程列表
+    function getCourseList(pageStart, pageFirst) {
+
+        //显示数据加载提示
+        msgTip = new Ext.LoadMask(Ext.getCmp('mainGridId'), {
+            msg: '数据加载中，请稍后...',
+            removeMask: true
+        });
+        msgTip.show();
+        $.ajax({
+            async: false,
+            url: BPR.domain + "/Handler/CourseHandler.ashx?action=show",
+            data: {
+                searchText: GLOBAL.searchbox.down("#courseName").getValue(),
+                CategoryOne: GLOBAL.searchbox.down("#CategoryOne").getValue(),
+                CategoryTwo: GLOBAL.searchbox.down("#CategoryTwo").getValue(),
+                CategoryThree: GLOBAL.searchbox.down("#CategoryThree").getValue(),
+                pageStart: pageStart ? pageStart : 1
+            },
+            type: "POST",
+            dataType: "json"
+        }).done(function (result) {
+            errTip(result, function () {
+                GLOBAL.pageToolBar.setPageSize(result.data.pageSize);
+
+                GLOBAL.pageToolBar.loadPage(pageFirst ? pageFirst : 0, result.data.count);
+                GLOBAL.courseListStore.loadData(result.data.list);
+            });
+        }).fail(function () {
+            Ext.Msg.alert("错误", "获取课程列表失败！");
+        }).always(function () {
+            //隐藏数据加载提示
+            msgTip.hide();
+        });
+    }
+
+    //课程的删除、上下架、置顶
+    function courseHandle(courseId, action) {
+        //提交
+        $.ajax({
+            async: false,
+            url: BPR.domain + "/Handler/CourseHandler.ashx?action=" + action,
+            type: "POST",
+            data: {
+                ID: courseId
+            },
+            dataType: "json"
+        }).done(function (data) {
+            errTip(data, function () {
+                if (data && data.success) {
+                    getCourseList();
+                }
+            });
+        }).fail(function () {
+        }).always(function () {
+        });
+    }
+
+    //课程编辑
+    function courseEdit(courseId) {
+        window.open(BPR.domain + 'editCourse.html?edit=edit&courseId=' + courseId);
+    }
+
+
+</script>
+</html>
