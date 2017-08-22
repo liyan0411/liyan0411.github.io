@@ -1,0 +1,20 @@
+/*footer*/
+.footer_top{background: url(../images/map_bottomimg.png) no-repeat center;width: 100%;height: 33px;}
+.footerbox{width: 100%;height: 411px;background: url(../images/yinyue_bg.jpg) no-repeat ;margin-top: -40px;background-position: center;}
+.footer_pic{width: 540px;height: 100px;margin: 0 auto;padding-top:75px ;}
+.footer_pic li{width: 57px;height: 57px;float: left;margin-right: 20px;border-radius: 50%;cursor: pointer;}
+.footer_pic1{background: url(../images/yinyue_duo.png);}
+.footer_pic2{background: url(../images/yinyue_lai.png);}
+.footer_pic3{background: url(../images/yinyue_mi.png);}
+.footer_pic4{background: url(../images/yinyue_fa.png);}
+.footer_pic5{background: url(../images/yinyue_suo.png);}
+.footer_pic6{background: url(../images/yinyue_la.png);}
+.footer_pic7{background: url(../images/yinyue_xi.png);}
+.footer_pic1:hover{background: url(../images/yinyue_duo.png),#2999D6;}
+.footer_pic2:hover{background: url(../images/yinyue_lai.png),#2999D6;}
+.footer_pic3:hover{background: url(../images/yinyue_mi.png),#2999D6;}
+.footer_pic4:hover{background: url(../images/yinyue_fa.png),#2999D6;}
+.footer_pic5:hover{background: url(../images/yinyue_suo.png),#2999D6;}
+.footer_pic6:hover{background: url(../images/yinyue_la.png),#2999D6;}
+.footer_pic7:hover{background: url(../images/yinyue_xi.png),#2999D6;}
+.footernote{text-align: center;color: #fff;border-top: 2px dashed #9890a2;padding-top: 30px;margin-top: 50px;}
