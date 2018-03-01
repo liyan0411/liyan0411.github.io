@@ -1,0 +1,74 @@
+﻿/*margin的样式初始化*/
+@font-face {
+    font-family: "heihei";
+    src: url('../css/REDOCN.TTF') format('truetype');
+}
+body,html{
+    /*font-size: 62.5%;*/
+    background-color: #ffffff;
+    font-family: 'Microsoft YaHei',Verdana, Arial, Helvetica, sans-serif;
+}
+
+body, h1, h2, h3, h4, h5, h6, p, ol, ul, dl, dd, input, canvas {
+    margin: 0;
+}
+
+/*padding的样式初始化*/
+ol, ul, th, td, input, canvas {
+    padding: 0;
+}
+
+/*列表点点的样式初始化*/
+ul, ol {
+    list-style: none;
+}
+
+/*下划线的样式初始化*/
+a {
+    text-decoration: none;
+}
+
+/*字体样式初始化*/
+em {
+    font-style: normal;
+}
+
+/*图片的初始化*/
+img {
+    border: none;
+}
+
+/*表格的间隙样式初始化*/
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+th,td{
+    margin: 0;
+    padding: 0;
+}
+
+/*表单*/
+input, textarea {
+    outline: none;
+}
+
+textarea {
+    resize: none;
+}
+
+/*清浮动 BFC*/
+.clear:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.clear {
+    zoom: 1;
+}
+
+.a1 .nav li span{
+    opacity: 1;!important;
+}
+

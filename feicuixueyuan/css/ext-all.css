@@ -1,0 +1,52 @@
+@import 'ext-theme-neptune/ext-theme-neptune-all.css';
+
+.x-panel-default-framed{
+	border-width: 2px;
+	border-radius: 0;
+	padding: 2px;
+}
+.x-panel-body-default-framed{
+	border-width: 0;
+}
+
+.x-grid-row-selected .x-grid-td, .x-grid-row-focused .x-grid-td{
+	border-color:#428fe6 !important;
+}
+.x-grid-row-selected .x-grid-td{
+	background-color:#dae4f7 !important;
+}
+.x-grid-cell-inner{
+	padding: 9px 6px;
+}
+.x-column-header-inner{
+	padding: 9px 6px 9px 10px;
+}
+.x-column-header-inner, .x-column-header-trigger{
+	background-color:#efefef;
+}
+.x-grid-row-over .x-grid-td {
+	border-color: #ecf4ff;
+	background-color: #ecf4ff
+}
+
+/*分页*/
+.firstButton {
+	background-image: url(../images/paging/first.png) !important;
+	border : 0;
+}
+.prevButton {
+	background-image: url(../images/paging/prev.png) !important;
+	border : 0;
+}
+.nextButton {
+	background-image: url(../images/paging/next.png) !important;
+	border : 0;
+}
+.lastButton {
+	background-image: url(../images/paging/last.png) !important;
+	border : 0;
+}
+.goButton {
+	background-image: url(../images/paging/go.png) !important;
+	border : 0;
+}

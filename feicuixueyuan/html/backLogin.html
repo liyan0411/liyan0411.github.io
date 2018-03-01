@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>翡翠学院-后台登陆</title>
+    <link rel="stylesheet" href="../css/font-awesome/css/font-awesome.css"/>
+    <link id="skin" rel="stylesheet" href="../css/ext-all.css"/>
+    <link rel="stylesheet" href="../css/backLogin.css"/>
+</head>
+<body class="body">
+    <canvas width="1920" height="1200"></canvas>
+    <div class="login_wrap">
+        <img class="logo" src="../images/back_logo.png"/>
+        <form>
+            <div class="oneinput_box">
+                <span class="icon"><i class="icon icon-user"></i></span>
+                <input id="loginId" type="text" placeholder="用户名"/>
+            </div>
+            <div class="oneinput_box">
+                <span class="icon"><i class="icon icon-lock"></i></span>
+                <input id="userPwd" type="password" placeholder="密码"/>
+            </div>
+            <div class="oneinput_box">
+                <span class="icon"><i class="icon icon-lock"></i></span>
+                <input id="validCode" type="text" placeholder="验证码"/>
+                <img id="twoCodeImg" onclick="changeCode();" src="../images/validatecode.png"/>
+            </div>
+        </form>
+        <button class="btn btn-info" onclick="findBackPwd();">忘记密码?</button>
+        <button id="loginButton" class="btn btn-success" onclick="login();">登录</button>
+    </div>
+    </body>
+    <script src="../lib/jquery-1.8.3.min.js" type="text/javascript"></script>
+    <script src="../js/canvas_dote.js" type="text/javascript"></script>
+    <script>
+        $(function () {
+            $("#loginId").focus();
+            //点击Enter键 执行登录
+            $(document).keypress(function (e) {
+                if (e.keyCode == 13) {
+                    login();
+                }
+            });
+
+        });
+
+        //点击登录方法
+        function login() {
+
+            var loginId = $("#loginId").val(),
+                    userPwd = $("#userPwd").val(),
+                    validCode = $("#validCode").val();
+
+            if (loginId && userPwd && validCode) {
+                $("#loginButton").attr('disabled', true).text('正在登录中……');
+                $.ajax({
+                    async: false,
+                    url: "/Handler/AdminLoginAndRegHandler.ashx?action=login",
+                    data: {
+                        userName: loginId,
+                        password: userPwd
+                    },
+                    type: "POST",
+                    dataType: "json"
+                }).done(function (result) {
+
+                    if (result.err) {
+                        alert(result.err);
+                    } else if (result.success) {
+                        location.href = "backHome.html";
+                    }
+                }).fail(function () {
+                    alert("错误");
+                }).always(function () {
+                    $("#loginButton").attr('disabled', false).text('登录');
+                });
+            }
+        };
+
+        //忘记密码，找回密码
+        function findBackPwd() {
+            alert("暂未开通，请后续关注！");
+
+        };
+
+        //验证码切换
+        function changeCode(){
+
+        }
+    </script>
+</html>

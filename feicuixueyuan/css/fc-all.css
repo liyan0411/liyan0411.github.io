@@ -1,0 +1,161 @@
+﻿@charset "utf-8";
+.xn-body{
+	padding:0 14px;
+}
+.xn_nowpath{
+	font-size:14px;
+	height:47px;
+	line-height:47px;
+	color:#777777;
+}
+.xn_nowpath a{
+	color:#2880e4;
+}
+
+.xn_section_wrap{
+	border:1px solid #cdcdcd;
+	margin-bottom:14px;
+	background: #fff;
+	position: relative;
+}
+.xn_section_title{
+	height:37px;
+	border-bottom:1px solid #cdcdcd;
+	font-size:12px;
+	color:#666666;
+}
+.xn_section_title .icon_wrap{
+	float:left;
+	border-right:1px solid #cdcdcd;
+	padding:11px 11px 0;
+	height:25px;
+}
+.xn_section_title .xn_title_name{
+	margin-left:14px;
+	font-weight:bold;
+	line-height:37px;
+	float:left;
+}
+
+.xn_btn{
+	width:113px;
+	height:34px;
+	line-height:34px;
+	border:none;
+	color:#fff;
+	text-align:center;
+	cursor:pointer;
+}
+.xn_btn_success{
+	background:#5cb85c;
+}
+.xn_btn_success:hover{
+	background:#449d44;
+}
+.xn_btn_inverse{
+	 background:#666666;
+}
+.xn_btn_inverse:hover{
+	background:#515151;
+}
+.xn_btn_primary{
+	background:#4f66b3;
+}
+.xn_btn_primary:hover{
+	background:#4159a6;
+}
+.xn_grid_row_img{
+	margin-left:5px;
+	cursor:pointer;
+	float:left;
+}
+
+/*课程编辑的覆盖层*/
+.xn_mask{
+	background:url(../images/white_opacity_bg2.png);
+	position:absolute;
+	left:0;
+	top:0;
+	right:0;
+	bottom:0;
+	z-index: 999;
+}
+
+/*和extjs样式有冲突的 地方做修改*/
+
+.xn_section_wrap .x-grid-body{
+	border-width:1px 0;
+}
+.xn_section_wrap .x-toolbar-default{
+	border-width:0;
+}
+.xn_section_wrap .x-grid-header-ct{
+
+}
+.xn_search_form .x-form-text{
+	line-height:32px;
+	height:34px;
+}
+.xn_search_form .x-form-trigger-wrap .x-form-text{
+	line-height:32px;
+	height:32px;
+}
+.xn_search_form .x-form-trigger{
+	line-height:32px;
+	height:32px;
+}
+.xn_search_form .x-form-trigger{
+	background-position:-22px 6px;
+}
+.xn_search_form .x-form-trigger-over {
+	background-position: -22px 6px;
+}
+.xn_search_form .x-form-trigger-wrap-focus .x-form-trigger {
+	background-position: -66px 6px;
+}
+.xn_search_form .x-form-trigger-wrap-focus .x-form-trigger-over {
+	background-position: -88px 6px;
+}
+.xn_search_form .x-form-trigger-click, .x-form-trigger-wrap-focus .x-form-trigger-click {
+	background-position: -44px 6px;
+}
+
+.xn_search_form .x-form-clear-trigger{
+	background-repeat:no-repeat;
+}
+
+.xn_search_form .x-form-trigger{
+	background-repeat:no-repeat;
+}
+
+.xn_search_form .x-form-item-label{
+	line-height: 32px;
+}
+.xn_tablea{
+	color: #3350e7;
+	cursor: pointer;
+	margin-right: 10px;
+}
+
+.xn_tablea:hover{
+	color: #1674de;
+}
+/*弹窗*/
+
+.x-window-default, .x-window-header-default, .x-window-body-default{
+	border-color:#4f66b3;
+}
+.x-window-header-default-top, .x-window-header-default .x-tool-img{
+	background-color:#4f66b3;
+}
+.x-window-body-default{
+	border-width:0 0 1px 0;
+}
+.x-window-default{
+	border-radius:0px;
+}
+.x-btn-default-small{
+	border-radius:0px !important;
+	background:#4f66b3;
+}
+

@@ -1,0 +1,13 @@
+.article{width: 700px;min-height: 700px;margin: 0 auto;text-align: center;font-family: "楷体";margin-top: 100px;color: #311759;}
+.article>h1{font-size: 54px;font-weight: bold;line-height: 60px;}
+.article>h2{font-size: 18px;letter-spacing: 6px;font-family: Arial, Helvetica, sans-serif;margin-bottom: 10px;}
+.article>h3{font-size: 30px;text-align: left;font-weight: bold;margin-top:60px ;background:url(../images/pen_line_long.png) bottom no-repeat;height: 55px;position: relative;}
+.article>h3>img{position: absolute;right: -55px;}
+.article>h4{font-size: 15px;margin-top:25px ;text-align: left;margin-bottom: 60px;}
+.article .love{width: 208px;height: 73px;margin: 50px auto 300px;padding-left:68px ;}
+.article h5,.article p{text-align: left;line-height: 22px;margin-bottom: 23px;font-size: 15px;font-family: STKaiti, KaiTi_GB2312, "华文楷体", "宋体", Arial, Helvetica, sans-serif;color: #000;}
+.article h5{font-size: 22px;margin-top: 30px;}
+.article .love:hover .lovetwo{width: 135px;transition:all 0.5s;}
+.loveone{background: url(../images/article_iflike.png);width:73px ;height: 73px;cursor: pointer;}
+.lovetwo{background: url(../images/article_iflike_nomberbg.png);width: 0;height: 35px;margin-top: 19px;}
+.lovetwo p{color: #fff;text-align:center ;line-height: 35px;}
