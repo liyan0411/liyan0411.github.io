@@ -64,3 +64,27 @@
         }
     }
 }
+::-webkit-scrollbar{
+  /*垂直滚动条的宽*/
+  width: 8px;
+  /*垂直滚动条的高*/
+  height: 8px;
+}
+::-webkit-scrollbar-track-piece{
+  /*修改滚动条的背景和圆角*/
+  background: #f9f9f9;
+  -webkit-border-radius: 6px;
+  border-radius: 6px;
+}
+/*修改垂直滚动条的样式*/
+::-webkit-scrollbar-thumb:vertical{
+  background-color: #C1C1C1;
+  -webkit-border-radius: 6px;
+  border-radius: 6px;
+}
+/*修改水平滚动条的样式*/
+::-webkit-scrollbar-thumb:horizontal{
+  background-color: #C1C1C1;
+  -webkit-border-radius: 6px;
+  border-radius: 6px;
+}
