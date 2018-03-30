@@ -6,7 +6,7 @@ categories: node.js
 tags:	node.js
 excerpt:	搭建一个express+node+mysql的demo
 mathjax: true
-author:	闵超
+author:	李岩
 ---
 * content
 {:toc}

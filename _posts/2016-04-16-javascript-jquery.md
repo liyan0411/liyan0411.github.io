@@ -6,7 +6,7 @@ categories: JavaScript Jquery
 tags: JavaScript Jquery
 excerpt:	JavaScript的核心API设计得很简单，但由于浏览器之间的严重不兼容性,IE9的到来缓和了这种不兼容性导致的糟糕境况，然而使用JavaScript框架或工具类库，能简化通用操作
 mathjax: true
-author:	闵超
+author:	李岩
 ---
 
 * content

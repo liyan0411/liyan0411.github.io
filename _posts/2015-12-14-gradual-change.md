@@ -5,7 +5,7 @@ date:   2015-12-13 15:14:54
 categories: CSS3
 tags: CSS3
 excerpt: 渐变包含线性渐变和径向渐变。
-author:	闵超
+author:	李岩
 ---
 
 * content

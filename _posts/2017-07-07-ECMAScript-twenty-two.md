@@ -6,7 +6,7 @@ categories: ES6
 tags:	ES6
 excerpt: 规格文件是计算机语言的官方标准，详细描述语法规则和实现方法。
 mathjax: true
-author:	闵超
+author:	李岩
 ---
 * content
 {:toc}

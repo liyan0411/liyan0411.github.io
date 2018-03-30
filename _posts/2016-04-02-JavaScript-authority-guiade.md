@@ -6,7 +6,7 @@ categories: JavaScript
 tags: JavaScript
 excerpt:	JavaScript语言核心——表达式、对象、数组、函数
 mathjax: true
-author:	闵超
+author:	李岩
 ---
 
 * content

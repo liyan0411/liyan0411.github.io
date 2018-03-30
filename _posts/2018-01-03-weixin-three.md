@@ -6,7 +6,7 @@ categories: 微信小程序
 tags: 微信小程序
 excerpt:	上一期学习了微信小程序开发的框架相关的知识，下面来学习一下微信小程序的框架提供了一系列基础组件，开发者可以组合使用这些组件进行快速开发。
 mathjax: true
-author:	闵超
+author:	李岩
 ---
 
 * content

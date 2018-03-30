@@ -6,7 +6,7 @@ categories: ES6
 tags: ES6
 excerpt:	Array.from方法用于将两类对象转为真正的数组：类似数组的对象(array-like object)和可遍历(iterable)的对象(包括ES6新增的数据结构Set和Map)。
 mathjax: true
-author:	闵超
+author:	李岩
 ---
 * content
 {:toc}

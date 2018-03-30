@@ -6,7 +6,7 @@ categories: ES6
 tags: ES6
 excerpt:	ES6提供了二进制和八进制数值的新的写法，分别用前缀0b（或0B）和0o（或0O）表示。
 mathjax: true
-author:	闵超
+author:	李岩
 ---
 * content
 {:toc}

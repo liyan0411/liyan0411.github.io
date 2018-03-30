@@ -6,7 +6,7 @@ categories: JavaScript
 tags: JavaScript
 excerpt:	正则表达式(regular expression)是一个描述字符模式的对象。JavaScript的RegExp表示正则表达式，String和RegExp都定义了方法，后者使用正则进行强大的模式匹配和文本检索与替换功能。JavaScript的正则表达式语法是Perl5的正则表达式语法的大型子集，所以对于有Perl编程经验人来说，学习JavaScript的正则表达式是很简单的。
 mathjax: true
-author:	闵超
+author:	李岩
 ---
 
 * content

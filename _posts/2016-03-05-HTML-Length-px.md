@@ -6,7 +6,7 @@ categories: HTML
 tags:	HTML
 excerpt:	在做屏幕适配过程中，最麻烦的点就在于像素的缩放比例
 mathjax: true
-author:	闵超
+author:	李岩
 ---
 
 * content

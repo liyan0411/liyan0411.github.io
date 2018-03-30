@@ -6,7 +6,7 @@ categories: ES6
 tags:	ES6
 excerpt:	es6新增let命令，用来声明变量。它的用法类似于var，但是所声明的变量,只有在let命令所在的代码块内有效,同时也新增了Const，用于声明常量
 mathjax: true
-author:	闵超
+author:	李岩
 ---
 
 * content

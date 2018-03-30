@@ -6,7 +6,7 @@ categories: ES6
 tags:	ES6
 excerpt: 将ES6的新语法，运用到编码实践之中，与传统的JavaScript语法结合在一起，写出合理的、易于阅读和维护的代码。
 mathjax: true
-author:	闵超
+author:	李岩
 ---
 * content
 {:toc}

@@ -6,7 +6,7 @@ categories: 微信小程序
 tags: 微信小程序
 excerpt:	上一期学习了微信小程序开发的框架——配置和逻辑，下面来学习一下微信小程序的视图层。开发Web网页时，我们用HTML构建页面结构，用CSS描述展现样式。与此类似，小程序也提供自己的视图层描述语言WXML和WXSS。
 mathjax: true
-author:	闵超
+author:	李岩
 ---
 
 * content

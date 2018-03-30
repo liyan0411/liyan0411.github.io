@@ -6,7 +6,7 @@ categories: ES6
 tags: ES6
 excerpt:	ES6加强了对Unicode的支持，并且扩展了字符串对象。
 mathjax: true
-author:	闵超
+author:	李岩
 ---
 
 * content

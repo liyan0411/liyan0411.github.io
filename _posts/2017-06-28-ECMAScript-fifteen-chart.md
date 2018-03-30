@@ -6,7 +6,7 @@ categories: ES6
 tags:	ES6
 excerpt:    Generator函数是ES6提供的一种异步编程解决方案，语法行为与传统函数完全不同。本章详细介绍Generator函数的语法和API，它的异步编程应用请看《异步操作》一章。Generator函数有多种理解角度。从语法上，首先可以把它理解成，Generator函数是一个状态机，封装了多个内部状态。
 mathjax: true
-author:	闵超
+author:	李岩
 ---
 * content
 {:toc}

@@ -5,7 +5,7 @@ date:   2016-01-03 15:14:54
 categories: CSS3
 tags: CSS3
 excerpt: CSS3中出现了新的多列布局(multi-column)是传统HTML网页中块状布局模式的有力扩充。简单的瀑布流可以由多列生成
-author:	闵超
+author:	李岩
 ---
 
 * content

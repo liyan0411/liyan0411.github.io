@@ -6,7 +6,7 @@ categories: node.js
 tags:	node.js
 excerpt:	核心模块是 Node.js 的心脏，它由一些精简而高效的库组成，为 Node.js 提供了基本的API
 mathjax: true
-author:	闵超
+author:	李岩
 ---
 * content
 {:toc}

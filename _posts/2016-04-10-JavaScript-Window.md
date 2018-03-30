@@ -6,7 +6,7 @@ categories: JavaScript
 tags: JavaScript
 excerpt:	Window对象在客户端的JavaScript中扮演核心角色：它是客户端JavaScript程序的全局对象。
 mathjax: true
-author:	闵超
+author:	李岩
 ---
 
 * content

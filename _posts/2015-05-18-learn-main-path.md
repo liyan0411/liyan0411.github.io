@@ -6,7 +6,7 @@ categories: web浏览器
 tags:	web浏览器
 excerpt: 理解浏览器的渲染流程，先创建DOM，再加载CSSOM，完成之后再运行JavaScript
 mathjax: true
-author:	闵超
+author:	李岩
 ---
 
 * content

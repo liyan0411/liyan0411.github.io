@@ -6,7 +6,7 @@ categories: JavaScript
 tags: JavaScript
 excerpt:	JavaScript是面向WEB的编程语言，绝大多数现代网站都使用了JavaScript，并且所有的现代浏览器——基于桌面系统、游戏机、平板电脑和智能手机浏览器——均包含了JavaScript解释器。JavaScript逐渐成为史上使用最广泛地编程语言。通过学习前淘宝团队译的《JavaScript权威指南第六版》来对JavaScript有一个深入的了解
 mathjax: true
-author:	闵超
+author:	李岩
 ---
 
 * content

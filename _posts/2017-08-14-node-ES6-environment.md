@@ -6,7 +6,7 @@ categories: ES6 node.js
 tags:	node.js ES6
 excerpt:	既然学了ES6,有了解了node的使用规则，那么，我们现在就简单的讲node和ES6的语法进行一次融合，来搭建一个node+ES6的环境。
 mathjax: true
-author:	闵超
+author:	李岩
 ---
 * content
 {:toc}

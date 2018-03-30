@@ -6,7 +6,7 @@ categories: ES6
 tags:	ES6
 excerpt:	S6允许按照一定模式，从数组和对象中提取值，对变量进行赋值，这被称为解构赋值(Destructuring)。
 mathjax: true
-author:	闵超
+author:	李岩
 ---
 
 * content

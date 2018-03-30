@@ -6,7 +6,7 @@ categories: JavaScript
 tags: JavaScript
 excerpt:	js判断是否是电脑端还是手机端，改变url中某一个参数，js判断浏览器类型
 mathjax: true
-author:	闵超
+author:	李岩
 ---
 
 * content

@@ -6,7 +6,7 @@ categories: CSS3
 tags:	CSS3
 excerpt: 深入理解CSS3的过渡特效和animation特效
 mathjax: true
-author:	闵超
+author:	李岩
 ---
 
 * content

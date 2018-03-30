@@ -6,7 +6,7 @@ categories: JavaScript
 tags: JavaScript
 excerpt:	文档对象模型(DOM)是表示和操作HTML和XML文档内容的基础API。API不是特别复杂，但是需要理解大量的结构细节
 mathjax: true
-author:	闵超
+author:	李岩
 ---
 
 * content

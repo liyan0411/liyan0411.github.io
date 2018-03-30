@@ -6,7 +6,7 @@ categories: ES6
 tags:	ES6
 excerpt:  修饰器（Decorator）是一个函数，用来修改类的行为。这是ES7的一个提案，目前Babel转码器已经支持。
 mathjax: true
-author:	闵超
+author:	李岩
 ---
 * content
 {:toc}

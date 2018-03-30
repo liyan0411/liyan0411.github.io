@@ -6,7 +6,7 @@ categories: JavaScript
 tags: JavaScript
 excerpt:	参照ECMAScript3和ECMAScript 5中的标准规范完整地讨论了JavaScript这门官方语言。本章将讨论JavaScript的子集和超集。其中子集的定义大部分都是出于安全考虑，只有使用这门语言的一个安全的子集编写脚本，才能让代码执行得更安全、更稳定，比如如何更安全地执行一段由不可信第三方提供的广告代码。
 mathjax: true
-author:	闵超
+author:	李岩
 ---
 
 * content

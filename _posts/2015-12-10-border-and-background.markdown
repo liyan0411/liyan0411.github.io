@@ -6,7 +6,7 @@ categories: CSS3
 tags: CSS3
 excerpt: css3中可以创建圆角边框，添加阴影框，并作为边框的形象而不使用设计程序 
 mathjax: true
-author:	闵超
+author:	李岩
 ---
 
 * content

@@ -6,7 +6,7 @@ categories: web浏览器
 tag:	web浏览器
 excerpt: 不同的浏览器有不同的版本；不同的版本有不同的兼容性
 mathjax: true
-author:	闵超
+author:	李岩
 ---
 
 * content

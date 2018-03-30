@@ -6,7 +6,7 @@ categories: JavaScript
 tags: JavaScript
 excerpt:	超文本传输协议(HyperText Transfer Protocol,HTTP)规定Web浏览器如何从Web服务器获取文档和向Web服务器提交表单内容，以及Web服务器如何响应这些请求和提交。
 mathjax: true
-author:	闵超
+author:	李岩
 ---
 
 * content

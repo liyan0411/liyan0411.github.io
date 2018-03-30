@@ -6,7 +6,7 @@ categories: JavaScript
 tags: JavaScript
 excerpt:	层叠样式表(Cascading Style Sheet,CSS)是一种指定HTML文档视觉表现的标准。CSS的本意是想让视觉设计师来使用的。它允许设计师精确地指定文档元素的字体、颜色、外边距、缩进、边框甚至是定位。
 mathjax: true
-author:	闵超
+author:	李岩
 ---
 
 * content

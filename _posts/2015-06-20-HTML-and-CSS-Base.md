@@ -6,7 +6,7 @@ categories: HTML CSS
 tags: HTML CSS
 excerpt: HTML和CSS基础以及编码规范
 mathjax: true
-author:	闵超
+author:	李岩
 ---
 
 * content

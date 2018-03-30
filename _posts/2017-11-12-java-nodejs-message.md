@@ -6,7 +6,7 @@ categories: node.js Java
 tags:	node.js Java
 excerpt:	本地通过socket进行通信。node.js作为服务器，java向node.js请求消息
 mathjax: true
-author:	闵超
+author:	李岩
 ---
 * content
 {:toc}

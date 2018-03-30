@@ -6,7 +6,7 @@ categories: Webpack
 tags:	Webpack
 excerpt:	打算系统的学一下js的MVVM框架，官方推荐使用 Webpack + vue-loader构建这些单文件 Vue 组件，于是就开始了webpack的学习之旅。 因为原来没有用过任何的构建工具与模块化工具，所以本系列会比较基础。
 mathjax: true
-author:	闵超
+author:	李岩
 ---
 
 * content

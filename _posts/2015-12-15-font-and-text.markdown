@@ -6,7 +6,7 @@ categories: CSS3
 tags: CSS3
 excerpt: css3之前的版本，网页设计师不得不使用用户计算机已经安装的字体.使用css3，网页设计师可以使用他/她喜欢的任何字体。
 mathjax: true
-author:	闵超
+author:	李岩
 ---
 
 * content

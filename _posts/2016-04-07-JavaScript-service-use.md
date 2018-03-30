@@ -6,7 +6,7 @@ categories: JavaScript
 tags: JavaScript
 excerpt:	JavaScript并不满足于只存在于浏览器端，随着Nodejs的发展，以及chromev8引擎在后台服务器端的应用，使得JavaScript逐渐活跃于服务器端
 mathjax: true
-author:	闵超
+author:	李岩
 ---
 
 * content

@@ -6,7 +6,7 @@ categories: Jquery
 tags: Jquery
 excerpt:	对Jquery.validate.js使用有了一些心得和体会，在此进行了记录，并附录一些常用的表单字段验证的方法以供参考
 mathjax: true
-author:	闵超
+author:	李岩
 ---
 
 * content

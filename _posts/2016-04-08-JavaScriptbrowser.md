@@ -6,7 +6,7 @@ categories: JavaScript
 tags: JavaScript
 excerpt:	之前我们学习了JavaScript的语言核心。以及JavaScript在服务端的应用（简单粗糙的了解），现在，让我们把目光从基础语言核心拿到实际应用上来。JavaScript在客户端的应用中，我们会介绍大量的脚本宿主对象，这些对象可以表示浏览器窗口、文档树和文档的内容等。
 mathjax: true
-author:	闵超
+author:	李岩
 ---
 
 * content

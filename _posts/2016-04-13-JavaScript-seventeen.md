@@ -6,7 +6,7 @@ categories: JavaScript
 tags: JavaScript
 excerpt:	客户端JavaScript程序采用了异步事件驱动编程模型。在这种程序设计风格下，当文档、浏览器、元素或与之相关的对象发生某些有趣的事情时，Web浏览器就会产生事件(event)。
 mathjax: true
-author:	闵超
+author:	李岩
 ---
 
 * content

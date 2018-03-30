@@ -6,7 +6,7 @@ categories: JavaScript
 tags: JavaScript
 excerpt:	每个JavaScript对象都是一个属性集合，相互之间没有任何联系。JavaScript中也可以定义对象的类，让每个对象都共享某些属性，这种“共享”的特性是非常有用的。类的成员或实例都包含一些属性，用以存放或定义它们的状态，其中有些属性定义了它们的行为(方法);在JavaScript中，类的实现是基于其原型继承机制的，如果两个实例都从同一个原型对象上继承了属性，我们说它们是同一个类的实例。
 mathjax: true
-author:	闵超
+author:	李岩
 ---
 * content
 {:toc}

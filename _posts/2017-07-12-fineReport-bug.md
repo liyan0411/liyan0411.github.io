@@ -6,7 +6,7 @@ categories: fineReport
 tags:	fineReport
 excerpt: 最近做一个官网项目，给官网添加由供应商填写的表单，可直接提交到官网的后台数据库，由于官网的后台权限不能给给采购部以避免官网被别人肆意改动，于是乎便将后台放在其他地方，使用报表来写，这里记录报表知制作过程中遇到的坑。
 mathjax: true
-author:	闵超
+author:	李岩
 ---
 * content
 {:toc}

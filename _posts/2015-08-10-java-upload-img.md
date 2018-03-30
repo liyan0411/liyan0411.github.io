@@ -6,7 +6,7 @@ categories: Java
 tags: Java
 excerpt: 最近在项目开发过程中出现了一个问题，一个表单中途改了需求，要求能进行上传附件（格式是PDF或者图片）
 mathjax: true
-author:	闵超
+author:	李岩
 ---
 
 * content

@@ -6,7 +6,7 @@ categories: ES6
 tags:    ES6
 excerpt:	ES6对象属性名都是字符串，这容易造成属性名的冲突。比如，你使用了一个他人提供的对象，但又想这个为这个对象添加新的方法(minxin模式)，这方法的名字就有可能与现有方法产生冲突。
 mathjax: true
-author:	闵超
+author:	李岩
 ---
 
 * content

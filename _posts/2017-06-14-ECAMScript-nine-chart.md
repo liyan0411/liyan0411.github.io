@@ -6,7 +6,7 @@ categories: ES6
 tags: ES6
 excerpt:	ES6允许直接写入变量和函数，作为对象的属性和方法。这样的书写更加简洁。
 mathjax: true
-author:	闵超
+author:	李岩
 ---
 
 * content

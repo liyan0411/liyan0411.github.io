@@ -6,7 +6,7 @@ categories: Jquery
 tags:	Jquery
 excerpt:	身为一个前端工程师，Jquery是不能不了解的，它可以节省大量开发时间。这里介绍jQuery插件开发的基本知识，最佳做法和常见的陷阱。我们理解了jQuery插件的基础知识，让我们写一个插件，做一些事情，读懂别人的插件更简单一些。
 mathjax: true
-author:	闵超
+author:	李岩
 ---
 * content
 {:toc}

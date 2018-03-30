@@ -6,7 +6,7 @@ categories: ES6
 tags: ES6
 excerpt:	在ES6中，RegExp构造函数的参数有两种情况的y修饰符和u修饰符。
 mathjax: true
-author:	闵超
+author:	李岩
 ---
 * content
 {:toc}

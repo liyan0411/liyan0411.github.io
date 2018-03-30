@@ -6,7 +6,7 @@ categories: ES6
 tags:	ES6
 excerpt:	二进制数组（ArrayBuffer对象、TypedArray视图和DataView视图）是JavaScript操作二进制数据的一个接口。这些对象早就存在，属于独立的规格（2011年2月发布），ES6将它们纳入了ECMAScript规格，并且增加了新的方法。
 mathjax: true
-author:	闵超
+author:	李岩
 ---
 * content
 {:toc}

@@ -6,7 +6,7 @@ categories: ES6
 tags: ES6
 excerpt:	在ES6之前，不能直接为函数的参数指定默认值，只能采用变通的方法
 mathjax: true
-author:	闵超
+author:	李岩
 ---
 
 * content

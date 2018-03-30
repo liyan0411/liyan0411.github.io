@@ -6,7 +6,7 @@ categories: CSS3
 tags: CSS3
 excerpt: Flex意为“弹性布局”，英文flexible box的缩写，flex布局使css盒模型变得更加强大和灵活，flex布局主要用在webapp和移动端中使用，移动端flex布局，将使的布局变得异常简单。任何一个容器都可以指定为flex布局；行内元素也可以使用flex布局
 mathjax: true
-author:	闵超
+author:	李岩
 ---
 
 * content

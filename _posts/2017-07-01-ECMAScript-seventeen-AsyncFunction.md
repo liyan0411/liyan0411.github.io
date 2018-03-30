@@ -6,7 +6,7 @@ categories: ES6
 tags:	ES6
 excerpt:   异步编程对JavaScript语言太重要。Javascript语言的执行环境是“单线程”的，如果没有异步编程，根本没法用，非卡死不可。
 mathjax: true
-author:	闵超
+author:	李岩
 ---
 * content
 {:toc}

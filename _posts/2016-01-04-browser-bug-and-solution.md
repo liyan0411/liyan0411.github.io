@@ -6,7 +6,7 @@ categories: web浏览器
 tag:	web浏览器
 excerpt:	一直想对浏览器的兼容性做一个总结，碍于时间的问题，乘着有空，简单地总结这么几条,浏览器最常见的就是浏览器内核导致的兼容性问题
 mathjax: true
-author:	闵超
+author:	李岩
 ---
 
 * content
