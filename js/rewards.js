@@ -17,16 +17,16 @@
 	};
 	alipay.onclick = function(){
 		// alert("alipay");
-		this.style.background = '#fff';
+		this.style.backgroundColor = '#fff';
 		alishow.style.display = "inline-block";
 		weixinshow.style.display = "none";
-		weixin.style.background="#eee";
+		weixin.style.backgroundColor="#eee";
 	};
 	weixin.onclick = function(){
 		// alert("weixin");
-		this.style.background = '#fff';
+		this.style.backgroundColor = '#fff';
 		alishow.style.display = "none";
 		weixinshow.style.display = "inline-block";
-		alipay.style.background="#eee";
+		alipay.style.backgroundColor="#eee";
 	}
 }())
