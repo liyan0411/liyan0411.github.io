@@ -16,21 +16,27 @@ window.onload = function(){
 			//获取网站访问量
 		    function getTotalPV()
 		    {
-		        $.ajax({ 
-		            url:"http://cloud.bmob.cn/8ba30290d424aae6/getTotalIPV",
-		            dataType:'jsonp', 
-		            data:'', 
-		            jsonp:'callback', 
-		            success:function(result) { 
-		                   //result.results[0].totalPV
-                        console.log(result);
-		               $('#lb_count').html(result.results[0].totalPV);
-		               console.log("aa"+$('#lb_count').html());
-		               //更新次数
-		               setTotalPV();
-		            }     
-		        });   
-		         
+		        // $.ajax({ 
+		        //     url:"http://cloud.bmob.cn/8ba30290d424aae6/getTotalIPV",
+		        //     dataType:'jsonp', 
+		        //     data:'', 
+		        //     jsonp:'callback', 
+		        //     success:function(result) { 
+		        //            //result.results[0].totalPV
+          //               console.log(result);
+		        //        $('#lb_count').html(result.results[0].totalPV);
+		        //        console.log("aa"+$('#lb_count').html());
+		        //        //更新次数
+		        //        setTotalPV();
+		        //     }     
+		        // });   
+		         if (localStorage.pagecount){
+		               localStorage.pagecount=Number(localStorage.pagecount)+1;
+		           }
+		           else{
+		              localStorage.pagecount=1;
+		           }
+		           document.getElementById("lb_count").innerHTML=localStorage.pagecount; 
 		    }  
 		    function setTotalPV()
 		    {
