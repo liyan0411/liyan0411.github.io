@@ -1,11 +1,11 @@
 // Drawing with text. Ported from Generative Design book - http://www.generative-gestaltung.de - Original licence: http://www.apache.org/licenses/LICENSE-2.0
 
 // Application variables
-$("#canvas").hover(function(){
-  $("#info").css("display","none");
-  },function(){
-  $("#info").css("display","block");
-});
+// $("#canvas").hover(function(){
+//   $("#info").css("display","none");
+//   },function(){
+//   $("#info").css("display","block");
+// });
 var position = {x: 0, y: window.innerHeight/2};
 var counter = 0;
 var minFontSize = 3;
