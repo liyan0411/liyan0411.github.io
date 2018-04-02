@@ -22,11 +22,11 @@ type: page
 
 ## 	技能清单
 
-Web框架：Jquery、Bootstrap、AmazeUi、EasyUI、LigerUi
+Web框架：Jquery、Bootstrap、AmazeUI、EasyUI、HUI、ElementUI
 
-MVVM框架： Vue、ng
+MVVM框架： Vue、ng、React（了解）
 
-MVC框架：Spring、Hibernate、mybatis
+<!-- MVC框架：Spring、Hibernate、mybatis -->
 
 App相关：抽空学习中(微信小程序、安卓、IOS)
 
@@ -56,6 +56,7 @@ App相关：抽空学习中(微信小程序、安卓、IOS)
 
 
 有志者立长志，无志者常立志。
+码农一枚，现在专注前端开发，懂点后端，旨在有生之年能成为一名合格的全栈工程师。
 <!-- UY BEGIN -->
 <div id="uyan_frame"></div>
 <script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js"></script>
