@@ -3,6 +3,8 @@
 	var myRewards = document.getElementById("btn-myRewards");
 	var alipay = document.getElementById("alipay");
 	var weixin = document.getElementById("weixin");
+	var alishow=document.getElementById("alishow");
+	var weixinshow=document.getElementById("weixinshow")
 	myRewards.onclick=  function(){
 		// alert("展示");
 		if(show){
@@ -15,12 +17,16 @@
 	};
 	alipay.onclick = function(){
 		// alert("alipay");
-		document.getElementById("alishow").style.display = "inline-block";
-		document.getElementById("weixinshow").style.display = "none";
+		this.style.background = '#fff';
+		alishow.style.display = "inline-block";
+		weixinshow.style.display = "none";
+		weixin.style.background="#eee";
 	};
 	weixin.onclick = function(){
 		// alert("weixin");
-		document.getElementById("alishow").style.display = "none";
-		document.getElementById("weixinshow").style.display = "inline-block";
+		this.style.background = '#fff';
+		alishow.style.display = "none";
+		weixinshow.style.display = "inline-block";
+		alipay.style.background="#eee";
 	}
 }())
