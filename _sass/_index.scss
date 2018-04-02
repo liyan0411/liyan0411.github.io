@@ -9,18 +9,15 @@
     #canvas {
         cursor: crosshair;
     }
-    #anyway:hover #info {
-      display: none;
-    }
     #info {
       font-family: 'Georgia', cursive;
       font-size: 40px;
       position: fixed;
       top: 50%;
       left: 50%;
-      color: #000;
-      margin-top: -40px;
-      margin-left: -200px;
+      color: #632748;
+      transform:translateX(-50%);
+      
     }
     .left {
         >ul {
