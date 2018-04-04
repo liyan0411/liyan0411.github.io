@@ -9,7 +9,7 @@
 # Site settings
 title: leeyen
 # brief-intro: Front-end Dev Engineer
-brief-intro: leeyen的主页
+brief-intro: 小李子的Blog。
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://liyan0411.github.io" # the base hostname & protocol for your site
 
