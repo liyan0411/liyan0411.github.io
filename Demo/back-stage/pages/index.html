@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="renderer" content="webkit">
+    <link rel="stylesheet" href="../assets/css/base.inc.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/index.css">
+    <script src="../assets/js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+    <title>首页</title>
+</head>
+
+<body >
+    <!--头部-->
+    <div class="nav">
+        <div class="logo fll">新发地智慧农贸</div>
+        <div class="user flr">
+            <a href="">
+                <p class="user-avar"><img src="../assets/images/demo/pic.jpg" alt="" class="a-img"></p>
+                <p class="user-name">admin</p>
+                <i class="icon icon-arrow"></i>
+            </a>
+        </div>
+    </div>
+    <!--/.头部-->
+
+    <!--main-->
+    <div class="wrap">
+
+        <!--侧导航-->
+        <div class="side-nav">
+            <div class="side-nav-item">
+                <div class="side-nav-list">
+                    <a href="" class="nav-link">
+                        <i class="icon icon-icon icon-home"></i>
+                        <span class="nav-title">首页</span>
+                    </a >
+                </div>
+            </div>
+            <div class="side-nav-item">
+                <div class="side-nav-list side-nav-list-cur">
+                    <a href="javascript:void(0)" class="nav-link">
+                        <i class="icon icon-icon icon-shop icon-shop-act"></i>
+                        <span class="nav-title">商户管理</span>
+                        <i class="icon icon-side-arrow"></i>
+                    </a >
+                </div>
+                <div class="side-nav-drop" style="display: block">
+                    <a href="javascript:void(0)" class="drop-link drop-link-current" id="clientMsg">
+                        <i class="icon icon-small-ic"></i>
+                        <span class="drop-link-title">商户信息</span>
+                    </a >
+                    <a href="javascript:void(0)" class="drop-link" id="Payment">
+                        <i class="icon icon-small-ic"></i>
+                        <span class="drop-link-title">商户缴费</span>
+                    </a >
+                </div>
+            </div>
+            <div class="side-nav-item">
+                <div class="side-nav-list">
+                    <a href="javascript:void(0)" class="nav-link">
+                        <i class="icon icon-icon icon-check"></i>
+                        <span class="nav-title">来货检测</span>
+                        <i class="icon icon-side-arrow"></i>
+                    </a >
+                </div>
+                <div class="side-nav-drop">
+                    <a href="javascript:void(0)" class="drop-link" id="cargoMsg">
+                        <i class="icon icon-small-ic"></i>
+                        <span class="drop-link-title">来货信息</span>
+                    </a >
+                    <a href="javascript:void(0)" class="drop-link" id="testMsg">
+                        <i class="icon icon-small-ic"></i>
+                        <span class="drop-link-title">检测信息</span>
+                    </a >
+                    <a href="javascript:void(0)" class="drop-link" id="waitTest">
+                        <i class="icon icon-small-ic"></i>
+                        <span class="drop-link-title">待检测</span>
+                    </a >
+                </div>
+            </div>
+            <div class="side-nav-item">
+                <div class="side-nav-list">
+                    <a href="javascript:void(0)" class="nav-link">
+                        <i class="icon icon-icon icon-market"></i>
+                        <span class="nav-title">市场管理</span>
+                        <i class="icon icon-side-arrow"></i>
+                    </a >
+                </div>
+                <div class="side-nav-drop">
+                    <a href="javascript:void(0)" class="drop-link" id="payRecord">
+                        <i class="icon icon-small-ic"></i>
+                        <span class="drop-link-title">缴费记录</span>
+                    </a >
+                    <a href="javascript:void(0)" class="drop-link" id="patrolManage">
+                        <i class="icon icon-small-ic"></i>
+                        <span class="drop-link-title">巡检管理</span>
+                    </a>
+                    <a href="javascript:void(0)" class="drop-link" id="districtManage">
+                        <i class="icon icon-small-ic"></i>
+                        <span class="drop-link-title">区域管理</span>
+                    </a>
+                </div>
+            </div>
+            <div class="side-nav-item">
+                <div class="side-nav-list">
+                    <a href="javascript:void(0)" class="nav-link">
+                        <i class="icon icon-icon icon-stat"></i>
+                        <span class="nav-title">大数据统计</span>
+                        <i class="icon icon-side-arrow"></i>
+                    </a >
+                </div>
+                <div class="side-nav-drop">
+                    <a href="javascript:void(0)" class="drop-link" id="clientStatistics">
+                        <i class="icon icon-small-ic"></i>
+                        <span class="drop-link-title">商户统计</span>
+                    </a>
+                    <a href="javascript:void(0)" class="drop-link" id="cargoStatistics">
+                        <i class="icon icon-small-ic"></i>
+                        <span class="drop-link-title">来货统计</span>
+                    </a>
+                    <a href="javascript:void(0)" class="drop-link" id="testStatistics">
+                        <i class="icon icon-small-ic"></i>
+                        <span class="drop-link-title">检测统计</span>
+                    </a>
+                    <a href="javascript:void(0)" class="drop-link" id="payStatistics">
+                        <i class="icon icon-small-ic"></i>
+                        <span class="drop-link-title">商户缴费</span>
+                    </a>
+                    <a href="javascript:void(0)" class="drop-link" id="financeStatistics">
+                        <i class="icon icon-small-ic"></i>
+                        <span class="drop-link-title">财务统计</span>
+                    </a>
+                </div>
+            </div>
+            <div class="side-nav-item">
+                <div class="side-nav-list">
+                    <a href="javascript:void(0)" class="nav-link">
+                        <i class="icon icon-icon icon-credit"></i>
+                        <span class="nav-title">信用等级</span>
+                        <i class="icon icon-side-arrow"></i>
+                    </a >
+                </div>
+            </div>
+            <div class="side-nav-item">
+                <div class="side-nav-list">
+                    <a href="javascript:void(0)" class="nav-link">
+                        <i class="icon icon-icon icon-account"></i>
+                        <span class="nav-title">账户等级</span>
+                        <i class="icon icon-side-arrow"></i>
+                    </a >
+                </div>
+                <div class="side-nav-drop">
+                    <a href="javascript:void(0)" class="drop-link" id="accountManagement">
+                        <i class="icon icon-small-ic"></i>
+                        <span class="drop-link-title">账户管理</span>
+                    </a>
+                    <a href="javascript:void(0)" class="drop-link" id="editPassword">
+                        <i class="icon icon-small-ic"></i>
+                        <span class="drop-link-title">修改密码</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!--/.侧导航-->
+            
+        <!--右侧-->
+        <div id="contents">
+            <iframe id="frame" class="system-iframe" src="./clientMsg.html"></iframe>
+        </div>
+
+        <!--/.右侧-->
+    </div>
+    <!--/.main-->
+</body>
+<script>
+    $(function() {
+        $('.side-nav-list').on('click', function() {
+            var activeNames = ['icon-home-act','icon-shop-act','icon-check-act','icon-market-act','icon-stat-act','icon-credit-act','icon-account-act']
+
+            $(this).siblings('.side-nav-drop').slideDown()
+                .parent().siblings().find('.side-nav-drop').slideUp()
+
+            for (var i =0; i <= $('.side-nav-list').length; i++) {
+                $('.side-nav-list').removeClass('side-nav-list-cur').find('i:first').removeClass(activeNames[i])
+            }
+
+            $(this).addClass('side-nav-list-cur').find('i:first').addClass(activeNames[$(this).parent().index()])
+
+            return false
+        });
+        $(".side-nav .side-nav-drop a").on("click",function(){
+            var ids= $(this).attr('id');
+            var id='#'+ids;
+            $("#"+ids).addClass("drop-link-current");
+            $("div.side-nav *").not(id).removeClass("drop-link-current");
+            $("#frame").attr("src",ids+".html"); 
+            // document.frames("frame").location.reload();
+        })
+    });
+        function setHeight() {
+            var h = $(window).height();
+            var w = $(window).width();
+            $("html").css({
+                "height": h+ "px"
+            });
+            $("#contents").css({
+                "height": (h-72)+ "px",
+                "width": (w-196)+ "px"
+            });
+            $(".wrap").css({
+                "height": (h-72)+ "px"
+            });
+        }
+        $(function() {
+            setHeight();
+        });
+        window.onresize = function() {
+            setHeight();
+        }
+</script>
+</html>
