@@ -77,7 +77,7 @@
                     <p class="shop-header-h fll">商户统计表 <em class="shop-header-all">共有商户：10000</em></p>
                     <button class="btn-search add flr">
                         <i class="icon icon-add"></i>
-                        <span class="btn-txt">添加商户</span>
+                        <span class="btn-txt addAdmin">添加商户</span>
                     </button>
                 </h3>
                 <div class="shop-form">
@@ -102,9 +102,9 @@
                                 <td>100</td>
                                 <td>张大大</td>
                                 <td>ddddd</td>
-                                <td>正常</td>
+                                <td>待上传</td>
                                 <td>
-                                    <a href="" class="t-green">查看详情</a>
+                                    <a href="details_2.html" class="t-green">查看详情</a>
                                     <a href="" class="t-red">禁用</a>
                                 </td>
                             </tr>
@@ -117,7 +117,7 @@
                                 <td>ddddd</td>
                                 <td class="t-orange">待审核</td>
                                 <td>
-                                    <a href="" class="t-green">查看详情</a>
+                                    <a href="details_3.html" class="t-green">查看详情</a>
                                     <a href="" class="t-red">禁用</a>
                                 </td>
                             </tr>
@@ -128,9 +128,9 @@
                                 <td>100</td>
                                 <td>张大大</td>
                                 <td>ddddd</td>
-                                <td class="t-orange">待审核</td>
+                                <td class="t-green">审核通过</td>
                                 <td>
-                                    <a href="" class="t-green">查看详情</a>
+                                    <a href="details_4.html" class="t-green">查看详情</a>
                                     <a href="" class="t-red">禁用</a>
                                 </td>
                             </tr>
@@ -222,6 +222,8 @@
     <!--/.main-->
 </body>
 <script>
-
+    $(".addAdmin").on("click",function(){
+        window.location.href="details_1.html";
+    })
 </script>
 </html>
