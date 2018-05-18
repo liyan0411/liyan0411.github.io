@@ -124,7 +124,20 @@
 	background: url(../images/icon-search.png) center center no-repeat;
 	vertical-align: middle
 }
-
+.icon-edit {
+	margin-right: 5px;
+	width: 15px;
+	height: 15px;
+	background: url(../images/icon-edit.png) center center no-repeat;
+	vertical-align: middle
+}
+.icon-reset {
+	margin-right: 5px;
+	width: 15px;
+	height: 15px;
+	background: url(../images/icon-reset.png) center center no-repeat;
+	vertical-align: middle
+}
 .btn-txt {
 	line-height: 26px;
 	vertical-align: middle
@@ -368,3 +381,6 @@
 .modalShow{
 	display: block;
 } 
+.shop-tab tbody td a.mar {
+    margin-right: 0;
+}

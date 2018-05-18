@@ -18,7 +18,7 @@
         <div class="logo fll">新发地智慧农贸</div>
         <div class="user flr">
             <a href="">
-                <p class="user-avar"><img src="../assets/images/demo/pic.jpg" alt="" class="a-img"></p>
+                <!-- <p class="user-avar"><img src="../assets/images/demo/pic.jpg" alt="" class="a-img"></p> -->
                 <p class="user-name">admin</p>
                 <i class="icon icon-arrow"></i>
             </a>
@@ -178,11 +178,18 @@
 <script>
     $(function() {
         $('.side-nav-list').on('click', function() {
-            var activeNames = ['icon-home-act','icon-shop-act','icon-check-act','icon-market-act','icon-stat-act','icon-credit-act','icon-account-act']
-
-            $(this).siblings('.side-nav-drop').slideDown()
+            var activeNames = ['icon-home-act','icon-shop-act','icon-check-act','icon-market-act','icon-stat-act','icon-credit-act','icon-account-act'];
+            var cssDis=$(this).siblings('.side-nav-drop').css("display");
+            if(cssDis=="block"){
+                $(this).siblings('.side-nav-drop').slideDown();
+                
+                $('.side-nav-drop').slideUp()
+            }else{
+                $(this).siblings('.side-nav-drop').slideUp();
+                $(this).siblings('.side-nav-drop').slideDown()
                 .parent().siblings().find('.side-nav-drop').slideUp()
-
+            }
+                
             for (var i =0; i <= $('.side-nav-list').length; i++) {
                 $('.side-nav-list').removeClass('side-nav-list-cur').find('i:first').removeClass(activeNames[i])
             }
