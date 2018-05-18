@@ -180,6 +180,7 @@
         $('.side-nav-list').on('click', function() {
             var activeNames = ['icon-home-act','icon-shop-act','icon-check-act','icon-market-act','icon-stat-act','icon-credit-act','icon-account-act'];
             var cssDis=$(this).siblings('.side-nav-drop').css("display");
+            
             if(cssDis=="block"){
                 $(this).siblings('.side-nav-drop').slideDown();
                 
@@ -214,11 +215,11 @@
                 "height": h+ "px"
             });
             $("#contents").css({
-                "height": (h-72)+ "px",
+                "height": (h-66)+ "px",
                 "width": (w-196)+ "px"
             });
             $(".wrap").css({
-                "height": (h-72)+ "px"
+                "height": (h-62)+ "px"
             });
         }
         $(function() {

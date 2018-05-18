@@ -259,7 +259,7 @@
 	color: #fff
 }
 
-.btn-cancel{
+.modal-footer .btn-cancel{
 	color:#000;
 	background-color: #EBF0F3;
 }

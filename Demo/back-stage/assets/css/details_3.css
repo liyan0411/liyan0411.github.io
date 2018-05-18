@@ -39,16 +39,21 @@ label.i-area{
     font-size: 15px;
     padding: 10px 0;
 }
+.twos{
+    height: 230px;
+    width:100%;
+}
 .payList,.conteactMsg{
-    display:inline-block;
     height: 220px;
 }
 .payList{
+    float: left;
     width: 60%;
 }
 .conteactMsg{
-    margin-left: 27px;
-    width: 37%;
+    float: right;
+    /*margin-left: 27px;*/
+    width: 38%;
 }
 .payList .btn-search,.conteactMsg .btn-search{
     width: 135px;
