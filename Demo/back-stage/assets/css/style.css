@@ -384,3 +384,7 @@
 .shop-tab tbody td a.mar {
     margin-right: 0;
 }
+.space-around{
+	display:flex;
+	justify-content:space-around;
+}
