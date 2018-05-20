@@ -39,3 +39,6 @@
             font-size: 15px;
             padding: 10px 0;
         }
+        .msgs p span,.accounts p span{
+            font-size: 14px;
+        }

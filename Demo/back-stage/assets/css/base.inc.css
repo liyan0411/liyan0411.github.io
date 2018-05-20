@@ -158,9 +158,13 @@ em,i {
 }
 
 .mtop {
-	margin-top: 24px
+	margin-top: 24px;
+	
 }
-
+.flexCls{
+	margin-top: 0;
+	display:flex;flex-wrap:wrap;	
+}
 .nav {
 	position: fixed;
 	left: 0;

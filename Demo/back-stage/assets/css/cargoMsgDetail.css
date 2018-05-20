@@ -57,3 +57,6 @@ label.i-area{
 .btn-search{
     width: 130px;
 }
+.msgs p span{
+    font-size: 14px;
+}

@@ -8,7 +8,11 @@
     <link rel="stylesheet" href="../assets/css/base.inc.css">
     <link rel="stylesheet" href="../assets/css/style.css">
     <link rel="stylesheet" type="text/css" href="../assets/css/details_1.css">
+    <link rel="stylesheet" href="http://www.jq22.com/jquery/font-awesome.4.6.0.css">
+    <link href="../assets/css/foundation-datepicker.css" rel="stylesheet" type="text/css">
     <script src="../assets/js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+     <script src="../assets/js/foundation-datepicker.js"></script>
+    <script src="../assets/js/locales/foundation-datepicker.zh-CN.js"></script>  
     <title>商户信息详情1</title>
 </head>
 
@@ -61,8 +65,8 @@
                     <div class="i-form-item">
                         <label for="" class="i-area">门店创建时间:</label>
                         <div class="i-form-select">
-                            <button class="btn-search">
-                                <span class="btn-txt">点击选择</span>
+                            <button class="btn-search" id="selTime">
+                                <span class="btn-txt" id="timeTxt">点击选择</span>
                             </button>
                         </div>
                     </div>
@@ -167,6 +171,19 @@
             $("#foodImg").attr('src',this.result);
         };
          fr.readAsDataURL(obj);
-    })
+    });
+    // $('#selTime').fdatepicker({
+    //     format: 'yyyy-mm-dd'
+    //     // pickTime: true
+    // });  
+    $('#selTime').fdatepicker({
+			onRender: function (date) {
+			
+			}
+		}).on('changeDate', function (ev) {
+            var d = new Date(ev.date)
+            youWant=d.getFullYear() + '-' + (d.getMonth() + 1) + '-' + d.getDate(); 
+			$("#timeTxt").text(youWant);
+		}).data('datepicker');
 </script>
 </html>
