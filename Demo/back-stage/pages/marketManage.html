@@ -202,7 +202,7 @@
                             </ul>
                             <dl class="lists">
                                <dt><span>蔬菜区</span>
-                                <a href="javascript:void(0)" class="flr t-green affEditAll">确认</a>
+                                    <a href="javascript:void(0)" class="flr t-green affEditAll">确认</a>
                                     <button class="flr marL editAll">
                                         <i class="icon icon-edits"></i>
                                     </button>
@@ -238,6 +238,7 @@
                             </dl>
                             <dl class="lists">
                                <dt><span>水产区</span>
+                                    <a href="javascript:void(0)" class="flr t-green affEditAll">确认</a>
                                     <button class="flr marL editAll">
                                         <i class="icon icon-edits"></i>
                                     </button>
@@ -273,6 +274,7 @@
                             </dl>
                             <dl class="lists">
                                <dt><span>水果区</span>
+                                    <a href="javascript:void(0)" class="flr t-green affEditAll">确认</a>
                                     <button class="flr marL editAll">
                                         <i class="icon icon-edits"></i>
                                     </button>
@@ -385,8 +387,8 @@
         var self=$(this);
         self.css("display","none");
         self.siblings(".editAll").css("display","inline-block");
-        self.parents("dt").siblings('dd').children('.txt').css("display","inline-block");
-        self.parents("dt").siblings('dd').children('span').css("display","none");
+        self.parents("dt").siblings('dd').children('span').css("display","inline-block");
+        self.parents("dt").siblings('dd').children('.txt').css("display","none");
     });  
     //二级添加
     $(document).on("click",'.addBtn',function(){
