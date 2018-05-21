@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="renderer" content="webkit">
+    <link rel="stylesheet" href="../assets/css/base.inc.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <script src="../assets/js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+    <title>市场管理</title>
+    <style>
+        .tabCls{
+            border-bottom: 1px solid #e5e5e5;
+        }
+        .tabCls .btn{
+            height: 38px;
+            
+            background-color: #e5e5e5;
+            color:#000;
+            width: 100px;
+            text-align: center;
+            font-size: 12px;
+            color: #000;
+            -webkit-border-radius: 5px 5px 0 0;
+            -moz-border-radius: 5px 5px 0 0;
+            border-radius: 5px 5px 0 0;
+            cursor: pointer;
+            margin-right: 15px;
+        }
+        .tabCls .btn.active{
+            background-color: #54ba9a;
+            color:#fff;            
+        }
+        .icon-setting1{
+            margin-right: 5px;
+            width: 15px;
+            height: 15px;
+            background: url(../assets/images/icon-market.png) center center no-repeat;
+            vertical-align: middle;
+        }
+        .icon-setting1-act{
+            background: url(../assets/images/icon-market-act.png) center center no-repeat;
+        }
+        .icon-setting2{
+            margin-right: 5px;
+            width: 15px;
+            height: 15px;
+            background: url(../assets/images/icon-home.png) center center no-repeat;
+            vertical-align: middle;
+        }
+        .icon-setting2-act{
+            background: url(../assets/images/icon-home-act.png) center center no-repeat;
+        }
+        .icon-setting3{
+            margin-right: 5px;
+            width: 15px;
+            height: 15px;
+            background: url(../assets/images/icon-check.png) center center no-repeat;
+            vertical-align: middle;
+        }
+        .icon-setting3-act{
+            background: url(../assets/images/icon-check-act.png) center center no-repeat;
+        }
+        .addCls .btn-search{
+            margin-bottom: 12px;
+        }
+        .shop-form .addCls{
+            display: none;
+        }
+        .shop-form .activeBlock{
+            display: block;
+        }
+        .btnList{
+            height: 50px;
+        }
+        .lists>dt,.lists>dd{
+            line-height: 40px;
+            font-size: 15px;
+
+        }
+        .lists>dd{
+            padding:0 40px 0 100px;
+        }
+        .lists>dt{
+            background-color: #F5FCFB;
+            padding:0 40px;
+            color:#000;
+        }
+        .lists>dd:nth-child(even){
+            background-color: #fff;
+        }
+        .lists>dd:nth-child(odd){
+            background-color: #FAFAFA;
+        }
+        .marL{
+            margin-left: 20px;
+        }
+        .lists button{
+            line-height: 40px;
+            cursor: pointer;
+        }
+        .lists .icon-adds {
+            margin-right: 5px;
+            width: 14px;
+            height: 14px;
+            background: url(../assets/images/icon-adds.png) no-repeat;
+            vertical-align: middle;
+        }
+        .lists .icon-edits {
+            margin-right: 5px;
+            width: 14px;
+            height: 14px;
+            background: url(../assets/images/icon-small-edit.png) no-repeat;
+            vertical-align: middle;
+        }
+        .lists .icon-edis_s{
+            margin-right: 5px;
+            width: 14px;
+            height: 14px;
+            background: url(../assets/images/icon-edit_s.png) no-repeat;
+            vertical-align: middle;
+        }
+    </style>
+</head>
+
+<body >
+
+
+    <!--main-->
+    <div class="wrap">
+
+        <!--右侧-->
+        <div class="main">
+
+            <div class="i-con shop-box">
+                <h3 class="shop-header clr">
+                    <p class="shop-header-h fll">市场管理</p>
+                </h3>
+                <div class="shop-form tab-content">
+                    <div class="tabCls">
+                        <button class="btn active">
+                            <i class="icon icon-setting1 icon-setting1-act"></i>
+                            <span class="btn-txt">区域设置</span>
+                        </button>
+                        <button class="btn">
+                            <i class="icon icon-setting2"></i>
+                            <span class="btn-txt">商品设置</span>
+                        </button>
+                        <button class="btn">
+                            <i class="icon icon-setting3"></i>
+                            <span class="btn-txt">缴费设置</span>
+                        </button>
+                    </div>
+                    <div class="addCls tab1 activeBlock">
+                        <p class="btnList">
+                            <button class="btn-search add flr ">
+                                <i class="icon icon-add"></i>
+                                <span class="btn-txt">添加区域</span>
+                            </button>
+                        </p>
+                        <div>
+                            <dl class="lists">
+                               <dt><span>蔬菜区</span>
+                                    <button class="flr marL">
+                                        <i class="icon icon-edits"></i>
+                                    </button>
+                                    <button class="flr">
+                                        <i class="icon icon-adds"></i>
+                                    </button>
+                                </dt>
+                                <dd>
+                                    <span>蔬菜区1</span>
+                                    <button class="flr marL">
+                                        <i class="icon icon-edis_s"></i>
+                                    </button>
+                                </dd>
+                                <dd>
+                                    <span>蔬菜区2</span>
+                                    <button class="flr marL">
+                                        <i class="icon icon-edis_s"></i>
+                                    </button>
+                                </dd>
+                               <dd>
+                                    <span>蔬菜区3</span>
+                                    <button class="flr marL">
+                                        <i class="icon icon-edis_s"></i>
+                                    </button>
+                                </dd>
+                            </dl>
+                            <dl class="lists">
+                               <dt><span>水产区</span>
+                                    <button class="flr marL">
+                                        <i class="icon icon-edits"></i>
+                                    </button>
+                                    <button class="flr">
+                                        <i class="icon icon-adds"></i>
+                                    </button>
+                                </dt>
+                                <dd>
+                                    <span>水产区1</span>
+                                    <button class="flr marL">
+                                        <i class="icon icon-edis_s"></i>
+                                    </button>
+                                </dd>
+                                <dd>
+                                    <span>水产区2</span>
+                                    <button class="flr marL">
+                                        <i class="icon icon-edis_s"></i>
+                                    </button>
+                                </dd>
+                               <dd>
+                                    <span>水产区3</span>
+                                    <button class="flr marL">
+                                        <i class="icon icon-edis_s"></i>
+                                    </button>
+                                </dd>
+                            </dl>
+                            <dl class="lists">
+                               <dt><span>水果区</span>
+                                    <button class="flr marL">
+                                        <i class="icon icon-edits"></i>
+                                    </button>
+                                    <button class="flr">
+                                        <i class="icon icon-adds"></i>
+                                    </button>
+                                </dt>
+                                <dd>
+                                    <span>水果区1</span>
+                                    <button class="flr marL">
+                                        <i class="icon icon-edis_s"></i>
+                                    </button>
+                                </dd>
+                                <dd>
+                                    <span>水果区2</span>
+                                    <button class="flr marL">
+                                        <i class="icon icon-edis_s"></i>
+                                    </button>
+                                </dd>
+                               <dd>
+                                    <span>水果区3</span>
+                                    <button class="flr marL">
+                                        <i class="icon icon-edis_s"></i>
+                                    </button>
+                                </dd>
+                                <dd>
+                                    <span>水果区3</span>
+                                    <button class="flr marL">
+                                        <i class="icon icon-edis_s"></i>
+                                    </button>
+                                </dd>
+                            </dl>
+                        </div>
+                    </div>
+                    <div class="addCls tab2">22222222222222222</div>
+                    <div class="addCls tab3">333333333333333</div>
+                </div>
+            </div>
+        </div>
+        <!--/.右侧-->
+    </div>
+    <!--/.main-->
+</body>
+<script>
+
+    $(".tabCls>.btn").on("click",function(){
+        var self=$(this);
+        var index=self.index()+1;
+        self.addClass("active").siblings("button").removeClass("active");
+        self.children(".icon").addClass("icon-setting"+index+"-act");
+
+        if(index==1){
+            removeCls(".icon-setting2","icon-setting2-act");
+            removeCls(".icon-setting3","icon-setting3-act");
+            $(".tab1").addClass("activeBlock").siblings(".addCls").removeClass("activeBlock");
+        }else if(index==2){
+            removeCls(".icon-setting1","icon-setting1-act");
+            removeCls(".icon-setting3","icon-setting3-act");
+            $(".tab2").addClass("activeBlock").siblings(".addCls").removeClass("activeBlock");
+        }else if(index==3){
+            removeCls(".icon-setting2","icon-setting2-act");
+            removeCls(".icon-setting1","icon-setting1-act");
+            $(".tab3").addClass("activeBlock").siblings(".addCls").removeClass("activeBlock");
+        }
+    })
+    function removeCls(el,cls){
+        $(el).removeClass(cls);
+    }
+</script>
+</html>
