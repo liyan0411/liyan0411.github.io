@@ -244,7 +244,9 @@
 .for-bg {
 	background: #fafafa
 }
-
+.t-blue{
+	color:blue!important;
+}
 .wrap-list-paging {
 	margin-left: 20px;
 	text-align: left;
