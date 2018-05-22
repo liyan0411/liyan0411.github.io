@@ -215,7 +215,7 @@
                                     
                                 </dt>
                                 <dd>
-                                    <span>蔬菜区1</span>
+                                    <span class="titleCls">蔬菜区1</span>
                                     <input type="text" value="蔬菜区1" class="inp txt">
                                     <button class="flr marL editCls">
                                         <i class="icon icon-edis_s"></i>
@@ -223,7 +223,7 @@
                                     <a href="javascript:void(0)" class="flr t-green affEdit">确认</a>
                                 </dd>
                                 <dd>
-                                    <span>蔬菜区2</span>
+                                    <span class="titleCls">蔬菜区2</span>
                                     <input type="text" value="蔬菜区2" class="inp txt">
                                     <button class="flr marL editCls">
                                         <i class="icon icon-edis_s"></i>
@@ -231,7 +231,7 @@
                                     <a href="javascript:void(0)" class="flr t-green affEdit">确认</a>
                                 </dd>
                                <dd>
-                                    <span>蔬菜区3</span>
+                                    <span class="titleCls">蔬菜区3</span>
                                     <input type="text" value="蔬菜区3" class="inp txt">
                                     <button class="flr marL editCls">
                                         <i class="icon icon-edis_s"></i>
@@ -251,7 +251,7 @@
 
                                 </dt>
                                 <dd>
-                                    <span>水产区1</span>
+                                    <span class="titleCls">水产区1</span>
                                     <input type="text" value="水产区1" class="inp txt">
                                     <button class="flr marL editCls">
                                         <i class="icon icon-edis_s"></i>
@@ -259,7 +259,7 @@
                                     <a href="javascript:void(0)" class="flr t-green affEdit">确认</a>
                                 </dd>
                                 <dd>
-                                    <span>水产区2</span>
+                                    <span class="titleCls">水产区2</span>
                                     <input type="text" value="水产区2" class="inp txt">
                                     <button class="flr marL editCls">
                                         <i class="icon icon-edis_s"></i>
@@ -267,7 +267,7 @@
                                     <a href="javascript:void(0)" class="flr t-green affEdit">确认</a>
                                 </dd>
                                <dd>
-                                    <span>水产区3</span>
+                                    <span class="titleCls">水产区3</span>
                                     <input type="text" value="水产区3" class="inp txt">
                                     <button class="flr marL editCls">
                                         <i class="icon icon-edis_s"></i>
@@ -286,7 +286,7 @@
                                     </button>
                                 </dt>
                                 <dd>
-                                    <span>水果区1</span>
+                                    <span class="titleCls">水果区1</span>
                                     <input type="text" value="水果区1" class="inp txt">
                                     <button class="flr marL editCls">
                                         <i class="icon icon-edis_s"></i>
@@ -294,7 +294,7 @@
                                     <a href="javascript:void(0)" class="flr t-green affEdit">确认</a>
                                 </dd>
                                 <dd>
-                                    <span>水果区2</span>
+                                    <span class="titleCls">水果区2</span>
                                     <input type="text" value="水果区2" class="inp txt">
                                     <button class="flr marL editCls">
                                         <i class="icon icon-edis_s"></i>
@@ -302,7 +302,7 @@
                                     <a href="javascript:void(0)" class="flr t-green affEdit">确认</a>
                                 </dd>
                                <dd>
-                                    <span>水果区3</span>
+                                    <span class="titleCls">水果区3</span>
                                     <input type="text" value="水果区3" class="inp txt">
                                     <button class="flr marL editCls">
                                         <i class="icon icon-edis_s"></i>
@@ -310,7 +310,7 @@
                                     <a href="javascript:void(0)" class="flr t-green affEdit">确认</a>
                                 </dd>
                                 <dd>
-                                    <span>水果区3</span>
+                                    <span class="titleCls">水果区3</span>
                                     <input type="text" value="水果区3" class="inp txt">
                                     <button class="flr marL editCls">
                                         <i class="icon icon-edis_s"></i>
@@ -378,6 +378,7 @@
     $(document).on("click",'.editCls',function(){
         var self=$(this);
         self.css("display","none");
+        $("div.tab1 *").not(self).attr("disabled",true);
         self.siblings('span').css("display","none");
         self.siblings('.txt,.affEdit').css("display","inline-block");
     });  
@@ -385,21 +386,25 @@
     $(document).on("click",'.affEdit',function(){
         var self=$(this);
         self.css("display","none");
+        $("div.tab1 *").not(self).attr("disabled",false);
         self.siblings('.txt').css("display","none");
         self.siblings('span,.editCls').css("display","inline-block");
+
     });  
     //编辑全部
     $(document).on("click",'.editAll',function(){
         var self=$(this);
         self.css("display","none");
+        $("div.tab1 *").not(self).attr("disabled",true);
         self.siblings(".affEditAll").css("display","inline-block");
-        self.parents("dt").siblings('dd').children('span').css("display","none");
+        self.parents("dt").siblings('dd').children('.titleCls').css("display","none");
         self.parents("dt").siblings('dd').children('.txt').css("display","inline-block");
     });  
     // 编辑完成保存
     $(document).on("click",'.affEditAll',function(){
         var self=$(this);
         self.css("display","none");
+        $("div.tab1 *").not(self).attr("disabled",false);
         self.siblings(".editAll").css("display","inline-block");
         self.parents("dt").siblings('dd').children('span').css("display","inline-block");
         self.parents("dt").siblings('dd').children('.txt').css("display","none");
@@ -407,13 +412,16 @@
     //二级添加
     $(document).on("click",'.addBtn',function(){
         var self=$(this);
-        self.attr("disabled",true);
+
+        // self.attr("disabled",true);
+        $("div.tab1 *").attr("disabled",true);
          var cont='<dd class="newAdd"><span class="nameCls">二级区域名称</span><input type="text" placeholder="请输入要添加的二级区域名称" name="" class="inp area1"><a href="javascript:void(0)" class="flr t-green affAdds">确认添加</a><a href="javascript:void(0)" class="flr t-red canAdds">取消添加</a><a href="javascript:void(0)" class="flr t-blue goAdds">继续添加</a></dd>';
         self.parents(".lists").append(cont);
     
     });  
     //二级取消
      $(document).on("click",'.canAdds',function(){
+        $("div.tab1 *").attr("disabled",false);
         $(this).parents("dd").remove();
         $(".addBtn").attr("disabled",false);
     });    
@@ -424,7 +432,11 @@
         $(this).parents(".lists").append(cont);
 
     }); 
-
+    //二级确认
+     $(document).on("click",'.goAdds',function(){
+        // $("div.tab1 *").attr("disabled",false);
+        
+    }); 
 
 
 </script>
