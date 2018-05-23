@@ -12,6 +12,13 @@ header {
             color: #fff;
         }
     }
+    .jumpGithub{
+        position: fixed;
+        top: 0;
+        right: 0;
+        border: 0;
+        z-index:999;
+    }
     .wrapper {
         width: 1140px;
         margin: 0 auto;
