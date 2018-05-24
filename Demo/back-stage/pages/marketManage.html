@@ -204,7 +204,8 @@
                                 
                             </ul>
                             <dl class="lists">
-                               <dt><span>蔬菜区</span>
+                               <dt><span class="one">蔬菜区</span>
+                                    <input type="text" value="蔬菜区" class="inp txt">
                                     <a href="javascript:void(0)" class="flr t-green affEditAll">确认</a>
                                     <button class="flr marL editAll">
                                         <i class="icon icon-edits"></i>
@@ -230,7 +231,7 @@
                                     </button>
                                     <a href="javascript:void(0)" class="flr t-green affEdit">确认</a>
                                 </dd>
-                               <dd>
+                                <dd>
                                     <span class="titleCls">蔬菜区3</span>
                                     <input type="text" value="蔬菜区3" class="inp txt">
                                     <button class="flr marL editCls">
@@ -391,23 +392,23 @@
         self.siblings('span,.editCls').css("display","inline-block");
 
     });  
-    //编辑全部
+    //一级编辑
     $(document).on("click",'.editAll',function(){
         var self=$(this);
         self.css("display","none");
-        $("div.tab1 *").not(self).attr("disabled",true);
+        // $("div.tab1 *").not(self).attr("disabled",true);
         self.siblings(".affEditAll").css("display","inline-block");
-        self.parents("dt").siblings('dd').children('.titleCls').css("display","none");
-        self.parents("dt").siblings('dd').children('.txt').css("display","inline-block");
+        self.parents("dt").children('.one').css("display","none");
+        self.parents("dt").children('.txt').css("display","inline-block");
     });  
-    // 编辑完成保存
+    // 一级编辑完成保存
     $(document).on("click",'.affEditAll',function(){
         var self=$(this);
         self.css("display","none");
-        $("div.tab1 *").not(self).attr("disabled",false);
+        $("div.tab1 button *").not(self).attr("disabled",false);
         self.siblings(".editAll").css("display","inline-block");
-        self.parents("dt").siblings('dd').children('span').css("display","inline-block");
-        self.parents("dt").siblings('dd').children('.txt').css("display","none");
+        self.parents("dt").children('.one').css("display","inline-block");
+        self.parents("dt").children('.txt').css("display","none");
     });  
     //二级添加
     $(document).on("click",'.addBtn',function(){
