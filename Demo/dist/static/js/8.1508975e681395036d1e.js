@@ -1,2 +1,0 @@
-webpackJsonp([8],{jEQS:function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var a={render:function(){var e=this.$createElement;return(this._self._c||e)("div",{staticClass:"bg"})},staticRenderFns:[]};var r=n("VU/8")({data:function(){return{}},created:function(){},methods:{}},a,!1,function(e){n("qCOj")},"data-v-e117285a",null);t.default=r.exports},qCOj:function(e,t){}});
-//# sourceMappingURL=8.1508975e681395036d1e.js.map
