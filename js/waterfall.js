@@ -54,7 +54,7 @@
       },
           {
               demo_link: '../Demo/tabLabel/index.html',
-                  img_link: 'https://ooo.0o0.ooo/2017/06/23/594cd3ef50634.png',
+              img_link: 'https://ooo.0o0.ooo/2017/06/23/594cd3ef50634.png',
               code_link: 'https://github.com/liyan0411/Dome/tree/master/tabLabel',
               title: 'css和js的tabl分栏',
               core_tech: 'js、css、html',
@@ -62,7 +62,7 @@
           },
           {
               demo_link: '../Demo/videorun/index.html',
-                  img_link: 'https://ooo.0o0.ooo/2017/06/23/594cd48973b40.png',
+              img_link: 'https://ooo.0o0.ooo/2017/06/23/594cd48973b40.png',
               code_link: 'https://github.com/liyan0411/Dome/tree/master/videorun',
               title: '视频播放',
               core_tech: 'js、css、html',
@@ -70,7 +70,7 @@
           },
           {
               demo_link: '../Demo/svgAnimate/index.html',
-                  img_link: 'https://ooo.0o0.ooo/2017/06/23/594cd4ffee171.png',
+              img_link: 'https://ooo.0o0.ooo/2017/06/23/594cd4ffee171.png',
               code_link: 'https://github.com/liyan0411/Dome/tree/master/svgAnimate',
               title: 'svg动画',
               core_tech: 'js、css、html',
@@ -100,14 +100,6 @@
           core_tech: 'bootstrap、css、html',
           description: '基于bootstrap的动态表单，可添加，可减少的可，兼容手机端'
          },
-          {
-              demo_link: '../Demo/oldHomePage/index.html',
-              img_link: 'https://i.loli.net/2017/08/22/599bc0d9dfd1d.png',
-              code_link: 'https://github.com/liyan0411/Dome/tree/master/oldHomePage',
-              title: '个人主页(old老的样本)',
-              core_tech: 'bootstrap、css、html',
-              description: '个人主页，未改版之前的版本'
-          },
           {
               demo_link: '../Demo/2048/demo.html',
               img_link: 'https://i.loli.net/2017/08/24/599e3a014d1ae.png',

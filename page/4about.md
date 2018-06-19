@@ -24,17 +24,17 @@ type: page
 
 Web框架：Jquery、Bootstrap、AmazeUI、EasyUI、HUI、ElementUI
 
-MVVM框架： Vue、ng、React（了解）
+MVVM、MVC框架： Vue、ng、React（了解）
 
 <!-- MVC框架：Spring、Hibernate、mybatis -->
 
-App相关：抽空学习中(微信小程序、安卓、IOS)
+App相关：抽空学习中(安卓、IOS)、微信小程序
 
 后端相关：NodeJs、PHP（了解）、Mysql、MongoDB
 
 工具相关：暂无（Webpack\Babel\Gulp\grunt）
 
-编辑器：Sublime Text3、Eclipse、vsCode、WebStrom
+编辑器：Sublime Text3、Eclipse、vsCode、WebStrom、Atom
 
 其他工具：	PS
 
