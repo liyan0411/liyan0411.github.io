@@ -111,7 +111,7 @@
           {
               demo_link: 'https://github.com/liyan0411/FAST',
               img_link: 'https://i.loli.net/2017/09/07/59b0bc6b8265c.jpg',
-              code_link: 'https://github.com/liyan0411/FAST',
+              code_link: 'https://github.com/liyan0411/Demo/tree/master/FAST',
               title: 'FAST系统',
               core_tech: '手机端app页面合集',
               description: '该系统是自己模仿手机app写的，包括新闻列表、日期、FAQ、会议管理、预定页面，设置，个人中心等模块过程，只是用于练习，方便将来能快速开发。'
