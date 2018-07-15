@@ -13,10 +13,12 @@ header {
         }
     }
     .jumpGithub{
+        display: none;
         position: fixed;
         top: 0;
-        right: 0;
+        left: 0;
         border: 0;
+        transform: rotate(-90deg);
         z-index:999;
     }
     .wrapper {
