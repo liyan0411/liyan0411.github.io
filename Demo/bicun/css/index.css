@@ -25,6 +25,9 @@ html,body{
     padding: 20px;
 
 }
+.dian{
+	display:inline-block;width:8px;height:8px;background: #fff;border-radius: 50%;
+}
 .newwrapper{
 	width: 100%;
 	display: flex;
@@ -63,6 +66,7 @@ html,body{
 .two{
 	display: flex;
 	color:#ccc;
+	padding-left: 20px;
 }
 .two .heng{
 	flex: 1;
@@ -86,6 +90,9 @@ html,body{
   display: block;
   /* font-weight: bold; */
 
+}
+.titleCls{
+	padding-left: 10px;
 }
 .new-info{
 	width: 91.875%;
