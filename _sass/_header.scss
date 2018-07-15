@@ -13,10 +13,18 @@ header {
         }
     }
     .jumpGithub{
+<<<<<<< HEAD
         display: none;
         position: fixed;
         top: 0;
         left: 0;
+=======
+        display:none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        transform: rotate(-90deg);
+>>>>>>> 4c45e4bdba956d68f9a5c37bd26b3d5580aed1c7
         border: 0;
         transform: rotate(-90deg);
         z-index:999;
