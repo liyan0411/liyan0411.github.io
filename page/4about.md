@@ -15,16 +15,16 @@ type: page
 
 ## 	个人介绍
 
-李岩，山西阳泉人，现居地上海。
+李岩，山西阳泉人，现居地上海，二流本科毕业。
 
-喜欢it开发工作，热爱生活,喜欢旅游，喜欢敲代码，喜欢由代码编译生成炫酷页面的过程，喜欢研究技术，致力于研究透前端。
+喜欢it开发工作，热爱生活，喜欢旅游，喜欢敲代码，喜欢由代码编译生成炫酷页面的过程，喜欢研究技术，致力于研究透前端。
 并在能成为全栈的路上努力。
 
 ## 	技能清单
 
 Web框架：Jquery、Bootstrap、AmazeUI、EasyUI、HUI、ElementUI
 
-MVVM、MVC框架： Vue、ng、React（了解）
+MVVM、MVC框架： Vue、ng、React
 
 <!-- MVC框架：Spring、Hibernate、mybatis -->
 
