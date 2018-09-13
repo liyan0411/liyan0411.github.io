@@ -17,7 +17,7 @@ header a:hover {
 }
 
 header .jumpGithub {
-  display: none;
+  /*display: none;*/
   position: fixed;
   top: 0;
   left: 0;
@@ -91,6 +91,9 @@ header .wrapper nav ul li > .active {
 }
 
 @media screen and (max-width: 1200px) and (min-width: 770px) {
+  header .jumpGithub {
+    display: none;
+  }
   header {
     height: 50px;
   }
@@ -118,6 +121,9 @@ header .wrapper nav ul li > .active {
 }
 
 @media screen and (max-width: 770px) {
+  header .jumpGithub {
+    display: none;
+  }
   header {
     height: 48px;
     margin-bottom: 15px;
