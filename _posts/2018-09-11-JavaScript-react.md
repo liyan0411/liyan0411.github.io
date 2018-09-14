@@ -2,8 +2,8 @@
 layout: post
 title:  "react入门"
 date:   2018-09-11 16:56:39
-categories: React
-tags: React
+categories: JavaScript
+tags: JavaScript
 excerpt:	react众所周知的前端3大主流框架之一，由于出色的性能，完善的周边设施风头一时无两
 mathjax: true
 author:	李岩
