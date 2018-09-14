@@ -13,18 +13,10 @@ header {
         }
     }
     .jumpGithub{
-<<<<<<< HEAD
-        display: none;
         position: fixed;
         top: 0;
         left: 0;
-=======
-        display:none;
-        position: fixed;
-        top: 0;
-        left: 0;
-        transform: rotate(-90deg);
->>>>>>> 4c45e4bdba956d68f9a5c37bd26b3d5580aed1c7
+
         border: 0;
         transform: rotate(-90deg);
         z-index:999;
@@ -85,7 +77,11 @@ header {
 }
 @media screen and (max-width:1200px) and (min-width: 770px) {
     header {
+        
         height: 50px;
+        .jumpGithub {
+            display: none;
+        }
         .wrapper {
             width: 90%;
             line-height: 50px;
@@ -117,8 +113,12 @@ header {
 }
 @media screen and (max-width: 770px) {
     header {
+
         height: 48px;
         margin-bottom: 15px;
+        .jumpGithub {
+            display: none;
+        }
         .wrapper {
             width: 95%;
             margin: 0 auto;
