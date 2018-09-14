@@ -169,7 +169,7 @@ function isPC() {
 
 init();
 document.body.removeEventListener("touchstart", function(){},true);
-document.body.removeEventListener("touchstart", true);
+// document.body.removeEventListener("touchstart", true);
 document.body.removeEventListener("touchstart", true);
 }());
 
