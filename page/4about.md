@@ -22,13 +22,13 @@ type: page
 
 ## 	技能清单
 
-Web框架：Jquery、Bootstrap、AmazeUI、EasyUI、HUI、ElementUI
+Web框架：Jquery、Bootstrap、AmazeUI、EasyUI、HUI、ElementUI、antdUI
 
 MVVM、MVC框架： Vue、ng、React
 
 <!-- MVC框架：Spring、Hibernate、mybatis -->
 
-App相关：抽空学习中(安卓、IOS)、微信小程序
+App相关：抽空学习中(安卓、IOS)、微信小程序、跨平台开发
 
 后端相关：NodeJs、PHP（了解）、Mysql、MongoDB
 
