@@ -1,0 +1,56 @@
+<footer class="site-footer">
+
+    <div class="wrapper">
+
+        <p class="description">
+            {% if site.description_footer %} {{site.description_footer}} {% endif %}
+            <!-- <a href="http://www.miitbeian.gov.cn">苏ICP备17060053号</a> -->
+        </p>
+        <span class="">当前访问量：<label id="lb_count">0</label>	</span>
+        <script type="text/javascript" src="//js.users.51.la/19430703.js"></script>
+    </div>
+</footer>
+  <script src="{{ " /js/jquery.min.js " | prepend: site.baseurl }}" charset="utf-8"></script>
+<script type="text/javascript">
+window.onload = function(){ 
+
+			//获取网站访问量
+		    function getTotalPV()
+		    {
+		        // $.ajax({ 
+		        //     url:"http://cloud.bmob.cn/8ba30290d424aae6/getTotalIPV",
+		        //     dataType:'jsonp', 
+		        //     data:'', 
+		        //     jsonp:'callback', 
+		        //     success:function(result) { 
+		        //            //result.results[0].totalPV
+          //               console.log(result);
+		        //        $('#lb_count').html(result.results[0].totalPV);
+		        //        console.log("aa"+$('#lb_count').html());
+		        //        //更新次数
+		        //        setTotalPV();
+		        //     }     
+		        // });   
+		         if (localStorage.pagecount){
+		               localStorage.pagecount=Number(localStorage.pagecount)+1;
+		           }
+		           else{
+		              localStorage.pagecount=1;
+		           }
+		           document.getElementById("lb_count").innerHTML=localStorage.pagecount; 
+		    }  
+		    function setTotalPV()
+		    {
+		      $.ajax({ 
+		            url:"http://cloud.bmob.cn/8ba30290d424aae6/setTotalIPV",
+		            dataType:'jsonp', 
+		            data:'', 
+		            jsonp:'callback', 
+		            success:function(result) {               
+		            }     
+		        });
+		    }
+		     getTotalPV();
+		    
+	};
+</script>
