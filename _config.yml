@@ -48,3 +48,4 @@ paginate: 2
 port: 3000
 #Local Server Hostname
 host: localhost
+theme: jekyll-theme-cayman
