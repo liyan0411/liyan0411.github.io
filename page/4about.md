@@ -22,9 +22,9 @@ type: page
 
 ## 	技能清单
 
-Web框架：Jquery、Bootstrap、AmazeUI、EasyUI、HUI、ElementUI、antdUI
+Web框架：Jquery、Bootstrap、AmazeUI、EasyUI、HUI、ElementUI、antdUI、iview
 
-MVVM、MVC框架： Vue、ng、React
+MVVM、MVC框架： Vue、React、ng
 
 <!-- MVC框架：Spring、Hibernate、mybatis -->
 
