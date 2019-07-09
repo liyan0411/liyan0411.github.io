@@ -59,5 +59,5 @@ App相关：抽空学习中(安卓、IOS)、微信小程序、跨平台开发
 码农一枚，现在专注前端开发，懂点后端，旨在有生之年能成为一名合格的全栈工程师。
 <!-- UY BEGIN -->
 <div id="uyan_frame"></div>
-<script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js"></script>
+<script type="text/javascript" src="//v2.uyan.cc/code/uyan.js"></script>
 <!-- UY END -->
