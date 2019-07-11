@@ -1,0 +1,61 @@
+		<div class="header_wrap">
+			<div class="header_box mg">
+				<img src="images/logo.png"/>
+				<ul class="header_nav fr ">
+					<li><a href="index.html" style="cursor: pointer;">首页</a></li>
+					<li class="header_nav_li">
+						<a href="">小鸟掌学
+							<ul class="header_nav_next">
+								<li onclick="javascript:window.open('aboutbird.html');">小鸟掌学主页<span>></span></li>
+								<li onclick="javascript:window.open('aboutbird.html');">小鸟掌学概述<span>></span></li>
+								<li onclick="javascript:window.open('aboutbird.html');">对企业的价值<span>></span></li>
+								<li onclick="javascript:window.open('aboutbird.html');">小鸟掌云<span>></span></li>
+								<li onclick="javascript:window.open('aboutbird.html');">微课联盟<span>></span></li>
+								<li onclick="javascript:window.open('aboutbird.html');">App下载<span>></span></li>
+							</ul>
+						</a>
+						<span><img src="images/nav_xiajiantou.png" alt="" /></span>
+					</li>
+					<li><a href="list.html">小鸟动态</a></li>
+					<li class="header_nav_li">
+						<a href="">企业文化
+							<ul class="header_nav_next">
+								<li><a href="article.html?type=companyIdea">公司理念</a><span>></span></li>
+								<li><a href="article.html?type=companyCulture">公司文化</a><span>></span></li>
+								<li><a href="article.html?type=companyEnvironment">公司氛围</a><span>></span></li>								
+							</ul>
+						</a>						
+						<span><img src="images/nav_xiajiantou.png" alt="" /></span>
+					</li>
+					<li class="header_nav_li">
+						<a href="article.html?type=joinUs">人力资源
+							<ul class="header_nav_next">
+								<li><a href="article.html?type=talents">人才理念</a><span>></span></li>
+								<li><a href="article.html?type=team">团队介绍</a><span>></span></li>
+								<li><a href="article.html?type=joinUs">招聘信息</a><span>></span></li>								
+							</ul>
+						</a>
+						<span	><img src="images/nav_xiajiantou.png" alt="" /></span>
+					</li>
+					<li><a href="article.html?type=telUs">联系我们</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="cometop">
+			<div class="cometop_one"></div>
+			<div class="cometop_two" onclick="javascript:window.open('article.html?type=telUs');"></div>
+		</div>
+
+		<script src="js/scrolltop.js"></script>
+		<script type="text/javascript">
+			$(function(){
+				$(".header_nav_li").hover(function(){
+					$(this).find("ul").stop().slideDown(600,"elasticOut");
+				},function(){
+					$(this).find("ul").stop().slideUp(100);
+				})
+				
+				$(".header_nav_next>li>span")
+				
+			})//window onload
+		</script>
