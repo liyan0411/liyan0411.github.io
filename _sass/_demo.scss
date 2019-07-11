@@ -11,6 +11,7 @@
         }
         .grid {
             margin: 0 auto;
+            z-index:666;
             /* clearfix */
             &:after {
                 content: '';
