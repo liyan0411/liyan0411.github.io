@@ -133,6 +133,14 @@
       title: 'node+express+mysql增删改查',
       core_tech: 'node、express、mysql',
       description: '使用node+mysql初步封装测试增删改查数据库'
+    },
+    {
+      demo_link: '../Demo/Technology/index.html',
+      img_link:'//www.newasp.net/attachment/soft/2016/0530/145637_92421209.png',
+      code_link: 'https://github.com/liyan0411/Demo/tree/master/Technology',
+      title: '小鸟掌学官网',
+      core_tech: 'js、jq、H5、CSS3',
+      description: '运用animate动画库实现各种炫酷动画效果。'
     }
   ]
 
