@@ -437,9 +437,9 @@ a:hover{color:#00BBEE;text-decoration: underline;}
 }
 .content .content-3>h3.shou{
 	-webkit-animation: shou 1s ease-out forwards;
-	position:absolute;
+	/* position:absolute;
 	bottom:-24%;
-	left: 200px;
+	left: 200px; */
 }
 @-webkit-keyframes shou{
 	0%{-webkit-transform: translate(60%,20%);transform: translate(60%,20%);}
