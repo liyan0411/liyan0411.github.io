@@ -28,9 +28,9 @@ MVVM、MVC框架： Vue、React、ng
 
 <!-- MVC框架：Spring、Hibernate、mybatis -->
 
-App相关：抽空学习中(安卓、IOS)、微信小程序、跨平台开发
+App相关：抽空学习中(Android、IOS)、微信小程序、跨平台开发
 
-后端相关：NodeJs、PHP（了解）、Mysql、MongoDB
+后端相关：NodeJs、Mysql、MongoDB、PHP/Java（了解）
 
 工具相关：暂无（Webpack\Babel\Gulp\grunt）
 
@@ -38,7 +38,7 @@ App相关：抽空学习中(安卓、IOS)、微信小程序、跨平台开发
 
 其他工具：	PS
 
-操作系统：	Windows、linux(不常用)
+操作系统：	Windows、macOS、linux(不常用)
 
 版本工具：	git、svn
 
