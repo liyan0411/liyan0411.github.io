@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="css/login.css" />
+	</head>
+	<body>
+		<!--begin:header-->
+		<div class="header">
+			<div class="header-content">
+				<div>
+					<a href="index.html"><img src="images/logo.png" alt="" /></a>
+					<span>注册</span>
+				</div>
+				<ul>
+					<li><a href="">登录</a>&nbsp;-&nbsp;<a href="">注册</a></li>
+					<li>|</li>
+					<li>
+						<div><a href="">我的支付宝</a></div>
+						<ul>
+							<li><a href="#">账户管理</a></li>
+							<li><a href="#">交易中心</a></li>
+							<li><a href="#">安全中心</a></li>
+							<li><a href="#">应用中心</a></li>
+						</ul>
+					</li>
+					<li>|</li>
+					<li><a href="">服务大厅</a></li>
+					<li>|</li>
+					<li><a href="">提建议</a></li>
+					<li>|</li>
+					<li>
+						<div><a href="">更多</a></div>
+						<ul>
+							<li><a href="#">无线支付</a></li>
+							<li><a href="#">理财专区</a></li>
+							<li><a href="#">商家服务</a></li>
+							<li><a href="#">返回支付宝首页</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<!--end:header-->
+		
+		<!--begin:content-->
+		<div class="content">
+			<div class="login">
+				<div class="step">
+					<div class="step-icon">
+						<i>1</i><b></b><i>2</i><b></b><i>3</i><b></b><i>4</i>
+					</div>
+					<div class="step-text">
+						<span>创建账户</span>
+						<span>设置身份信息</span>
+						<span>设置支付方式</span>
+						<span>成功</span>
+					</div>
+				</div>
+				<ul>
+					<li><i></i></li>
+					<li></li>
+				</ul>
+				<div class="login-box" ng-controller="myCtrl">
+					<form>
+						<div class="form-group">
+							<label>国籍/地区</label><span class="area">中国大陆<i></i></span>
+							<div class="area-box">
+								<ul>
+									<li>中国大陆</li>
+									<li>香港</li>
+									<li>澳门</li>
+									<li>台湾</li>
+								</ul>
+								<ul>
+									<li class="curr-area">亚洲</li>
+									<li>欧洲</li>
+									<li>美洲</li>
+									<li>非洲</li>
+									<li>大洋洲</li>
+								</ul>
+								<ul>
+									<li>Cambodia（柬埔寨）</li>
+									<li>India（印度）</li>
+									<li>Indonesia（印度尼西亚）</li>
+									<li>Israel（以色列）</li>
+									<li>Japan（日本）</li>
+									<li>Jordan（约旦）</li>
+									<li>Kyrgyzstan（吉尔吉斯斯坦）</li>
+									<li>Malaysia（马来西亚）</li>
+									<li>Maldives（马尔代夫）</li>
+									<li>Mongolia（蒙古）</li>
+									<li>Philippines（菲律宾）</li>
+									<li>Qatar（卡塔尔）</li>
+								</ul>
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="phone-number">手机号</label><span class="phone">86<i></i></span><input  type="text" id="phone-number" placeholder="请输入你的手机号码"/>
+							<div class="phone-box-1">
+								<div>输入的手机号码将做为账号名<i></i><b></b></div>
+							</div>
+							<div class="phone-box-2">
+								<div>请输入11位手机号<i></i><b></b></div>
+							</div>
+							<div class="phone-box-3">
+								<div>此用户名已被注册<i></i><b></b></div>
+							</div>
+							<div class="phone-box-4">
+								<div>可以注册<i></i><b></b></div>
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="auth">短信校验码</label><input type="text" id="auth" /><span class="auth">获取验证码</span>
+						</div>
+						<div class="form-group">
+							<input type="checkbox" id="checkbox" ng-model="agree"/><label class="checkbox" for="checkbox">同意<a href="#">《同意支付宝支付协议》</a></label>
+						</div>
+						<div class="form-group">
+							<input ng-disabled="!agree" type="button" id="next" value="下一步" />
+						</div>
+						<div><a href="#">使用邮箱注册</a></div>
+					</form>
+				</div>
+			</div>		
+		</div>
+		<!--end:content-->
+
+		<!--begin:footer-->
+		<div class="footer">
+			<div class="footer-content">
+				<div></div>
+				<ul>
+					<li><span>100+家合作银行</span></li>
+					<li><span>3大安全保障</span></li>
+					<li><span>35个生活应用</span></li>
+				</ul>
+				<p>支付宝版权所有 2004-2016 ICP证：沪B2-20150087</p>
+			</div>
+		</div>
+		<!--end:footer-->
+
+
+		
+		<script src="jquery-1.11.3.min.js"></script>
+		<script src="angular.js"></script>
+		<script type="text/javascript">
+			angular.module("myApp",['ng'])
+				.controller("myCtrl",function($scope){
+
+					})
+		</script>
+		<script>
+			$("span.area").click(function(){
+				if($(".area-box").is(":hidden")){
+					$(".area-box").show();
+				}else{
+					$(".area-box").hide();
+				}
+			})
+
+
+
+
+			$("#phone-number").focus(function(){
+				$(".phone-box-2").hide();
+				$(".phone-box-3").hide();
+				$(".phone-box-4").hide();
+				$(".phone-box-1").show();
+			}).keyup(function(){
+				$(".phone-box-1").hide();
+				$(".phone-box-2").show();
+				$(".phone-box-3").hide();
+				$(".phone-box-4").hide();
+				if($("#phone-number").val()!==""&&$("#phone-number").val().length===11){
+					$(".phone-box-2").hide();
+					var value=$("#phone-number").val();
+					$.post('data/1.php',{'number':value},function(data){
+						if(data==="0"){
+							$(".phone-box-4").show();
+						}else if(data==="1"){
+							$(".phone-box-3").show();
+						}
+					})
+				}
+			}).blur(function(){
+
+			})
+		</script>
+	</body>
+</html>

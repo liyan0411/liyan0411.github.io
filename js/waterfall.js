@@ -136,11 +136,21 @@
     },
     {
       demo_link: '../Demo/Technology/index.html',
-      img_link:'//www.newasp.net/attachment/soft/2016/0530/145637_92421209.png',
-      code_link: 'https://github.com/liyan0411/Demo/tree/master/Technology',
+      img_link:
+        '//www.newasp.net/attachment/soft/2016/0530/145637_92421209.png',
+      code_link:
+        'https://github.com/liyan0411/liyan0411.github.io/tree/master/Demo/Technology',
       title: '小鸟掌学官网',
       core_tech: 'js、jq、H5、CSS3',
       description: '运用animate动画库实现各种炫酷动画效果。'
+    },
+    {
+      demo_link: '../Demo/alipay/index.html',
+      img_link: '../Demo/alipay/images/7-4.png',
+      code_link: 'https://github.com/liyan0411/Demo/tree/master/Technology',
+      title: '仿支付宝首页',
+      core_tech: 'js、jq、H5、CSS3',
+      description: '整屏滚动、实现各种炫酷动画效果。'
     }
   ]
 
