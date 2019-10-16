@@ -1,2 +1,0 @@
-webpackJsonp([0],{jT7l:function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var i={render:function(){var e=this.$createElement,t=this._self._c||e;return t("div",[this._v("\n  login\n  "),t("el-button",{attrs:{type:"primary"},on:{click:this.jump}},[this._v("登录")])],1)},staticRenderFns:[]},r=n("VU/8")({name:"login",methods:{jump:function(){this.$router.push("/home")}}},i,!1,null,null,null);t.default=r.exports}});
-//# sourceMappingURL=0.b0b0468bd1462151529e.js.map
