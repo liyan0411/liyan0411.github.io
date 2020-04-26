@@ -1,0 +1,200 @@
+---
+layout:     post
+title:      "微服务之服务消费者（Feign）"
+subtitle:   " \"Hello SpringBoot, Hello SpringClould\""
+date:       2019-01-07 12:00:00
+author:     "墨城烟柳（Mcyl）"
+header-img: "img/post-bg-os-metro.jpg"
+catalog: true
+tags:
+    - 手把手教你玩转SpringCloud
+---
+
+> “Hello everyone! ”
+
+
+## Feign简介
+
+Feign 主要有三大特征如下：
+
+-  Feign 采用的是基于接口的注解
+-  Feign 整合了ribbon，具有负载均衡的能力
+-  整合了Hystrix，具有熔断的能力
+
+
+## 第一步：创建服务集群
+
+这一篇文章基于[上一篇](https://mochengyanliu.github.io/2018/10/31/微服务之服务注册与发现-Eureka-2018/)文章的工程，
+启动EurekaServer工程；启动EurekaClient工程，它的端口为8762；复制工程EurekaClient，并将EurekaClient的配置文件的端口改为9873,并启动，这时你会
+发现：EurekaClient在EurekaServer注册了2个实例，这就相当于一个小的集群。
+
+
+## 第二步：创建一个服务消费者： 
+
+右键工程->创建创建module->选择spring initialir->web->web,cloud discovery->eureka discovery,cloud routing->feign,然后一直下一步就行了。
+
+####  创建完成后：
+
+	<?xml version="1.0" encoding="UTF-8"?>
+	<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+		<modelVersion>4.0.0</modelVersion>
+		<parent>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-parent</artifactId>
+			<version>2.1.1.RELEASE</version>
+			<relativePath/> <!-- lookup parent from repository -->
+		</parent>
+		<groupId>com.test</groupId>
+		<artifactId>service-feign</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+		<name>service-feign</name>
+		<description>Demo project for Spring Boot</description>
+
+		<properties>
+			<java.version>1.8</java.version>
+			<spring-cloud.version>Greenwich.RC2</spring-cloud.version>
+		</properties>
+
+		<dependencies>
+			<dependency>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-starter-web</artifactId>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework.cloud</groupId>
+				<artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework.cloud</groupId>
+				<artifactId>spring-cloud-starter-openfeign</artifactId>
+			</dependency>
+
+			<dependency>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-starter-test</artifactId>
+				<scope>test</scope>
+			</dependency>
+		</dependencies>
+
+		<dependencyManagement>
+			<dependencies>
+				<dependency>
+					<groupId>org.springframework.cloud</groupId>
+					<artifactId>spring-cloud-dependencies</artifactId>
+					<version>${spring-cloud.version}</version>
+					<type>pom</type>
+					<scope>import</scope>
+				</dependency>
+			</dependencies>
+		</dependencyManagement>
+
+		<build>
+			<plugins>
+				<plugin>
+					<groupId>org.springframework.boot</groupId>
+					<artifactId>spring-boot-maven-plugin</artifactId>
+				</plugin>
+			</plugins>
+		</build>
+
+		<repositories>
+			<repository>
+				<id>spring-milestones</id>
+				<name>Spring Milestones</name>
+				<url>https://repo.spring.io/milestone</url>
+			</repository>
+		</repositories>
+
+	</project>
+
+
+	
+
+#### 配置appication.yml文件：
+
+	server:
+	  port: 9874
+	eureka:
+	  client:
+		service-url:
+		  defaultZone: http://localhost:9871/eureka/
+	spring:
+	  application:
+		name: service-feign
+
+
+## 第三步 配置启动类
+
+在工程的启动类中,通过@EnableDiscoveryClient向服务中心注册；并且加上@EnableFeignClients注解开启Feign的功能
+
+	import org.springframework.boot.SpringApplication;
+	import org.springframework.boot.autoconfigure.SpringBootApplication;
+	import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
+	import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
+	import org.springframework.cloud.openfeign.EnableFeignClients;
+
+	@SpringBootApplication
+	@EnableEurekaClient
+	@EnableDiscoveryClient
+	@EnableFeignClients
+	public class ServiceFeignApplication {
+
+		public static void main(String[] args) {
+			SpringApplication.run(ServiceFeignApplication.class, args);
+		}
+
+	}
+
+
+## 第四步：写一个测试类HelloService
+
+通过@ FeignClient（“服务名”），来指定调用哪个服务。比如在代码中调用了eureka-server服务的“/hello”接口，代码如下：
+
+	import org.springframework.cloud.openfeign.FeignClient;
+	import org.springframework.web.bind.annotation.RequestMapping;
+	import org.springframework.web.bind.annotation.RequestMethod;
+	import org.springframework.web.bind.annotation.RequestParam;
+
+	@FeignClient(value = "eureka-client")
+	public interface HelloService {
+		@RequestMapping(value = "/hello",method = RequestMethod.GET)
+		String sayHelloFromClient(@RequestParam(value = "name") String name);
+	}
+
+## 第五步：写一个测试类controller
+
+在controller中用调用HelloService 的方法，代码如下：
+
+	import com.test.servicefeign.service.HelloService;
+	import org.springframework.beans.factory.annotation.Autowired;
+	import org.springframework.web.bind.annotation.GetMapping;
+	import org.springframework.web.bind.annotation.RequestParam;
+	import org.springframework.web.bind.annotation.RestController;
+
+	@RestController
+	public class HelloController {
+
+		@Autowired
+		HelloService helloService;
+
+		@GetMapping(value = "/hello")
+		public String sayHello(@RequestParam String name){
+			return helloService.sayHelloFromClient(name);
+		}
+	}
+
+## 启动工程
+
+打开 http://localhost:9874/hello?name=handsomeman ，你会在浏览器上看到交替显示：
+
+hello: handsomeman,i am from port:9872
+
+hello: handsomeman,i am from port:9873
+
+这说明当我们通过调用eureka-server服务的“/hello”接口时，已经做了负载均衡，访问了不同的端口的服务实例。
+
+####  源码下载：
+
+[https://github.com/mochengyanliu/SpringCloudLearn/tree/master/section3](https://github.com/mochengyanliu/SpringCloudLearn/tree/master/section3)
+
