@@ -9,7 +9,7 @@
                 <p class="copyright text-muted">
                     Copyright &copy; {{ site.title }} {{ site.time | date: '%Y' }}
                     <br>
-                    Powered by <a href="http://mochengyanliu.github.io">Mcyl Blog</a> |
+                    Powered by <a href="http://liyan0411.github.io">{{ site.title }} Blog</a> |
                     <iframe
                         style="margin-left: 2px; margin-bottom:-5px;"
                         frameborder="0" scrolling="0" width="100px" height="20px"
@@ -29,7 +29,7 @@
 <script src="{{ "/js/bootstrap.min.js " | prepend: site.baseurl }}"></script>
 
 <!-- Custom Theme JavaScript -->
-<script src="{{ "/js/hux-blog.min.js " | prepend: site.baseurl }}"></script>
+<script src="{{ "/js/ly-blog.min.js " | prepend: site.baseurl }}"></script>
 
 <!-- Service Worker -->
 {% if site.service-worker %}
@@ -53,7 +53,7 @@
      Because of the native support for backtick-style fenced code blocks
      right within the Markdown is landed in Github Pages,
      From V1.6, There is no need for Highlight.js,
-     so Huxblog drops it officially.
+     so Leeyblog drops it officially.
 
      - https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0
      - https://help.github.com/articles/creating-and-highlighting-code-blocks/
@@ -96,7 +96,7 @@
 <!-- Google Analytics -->
 {% if site.ga_track_id %}
 <script>
-    // dynamic User by Hux
+    // dynamic User by Leey
     var _gaId = '{{ site.ga_track_id }}';
     var _gaDomain = '{{ site.ga_domain }}';
 
@@ -115,7 +115,7 @@
 <!-- Baidu Tongji -->
 {% if site.ba_track_id %}
 <script>
-    // dynamic User by Hux
+    // dynamic User by Leey
     var _baId = '{{ site.ba_track_id }}';
 
     // Originial
@@ -171,7 +171,7 @@
 
     /*
      * Doc: https://github.com/davist11/jQuery-One-Page-Nav
-     * Fork by Hux to support padding
+     * Fork by Leey to support padding
      */
     async("{{ '/js/jquery.nav.js' | prepend: site.baseurl }}", function () {
         $('.catalog-body').onePageNav({
