@@ -3,7 +3,7 @@ layout:     post
 title:      "Hello 2017"
 subtitle:   " \"Hello World, Hello Blog\""
 date:       2017-10-23 12:00:00
-author:     "墨城烟柳（Mcyl）"
+author:     "小李子（Leey）"
 header-img: "img/post-bg-2015.jpg"
 catalog: true
 tags:
