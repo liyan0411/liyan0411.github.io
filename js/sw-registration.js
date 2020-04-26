@@ -34,24 +34,24 @@ function handleRegistration(registration){
 if(navigator.serviceWorker){
   // For security reasons, a service worker can only control the pages
   // that are in the same directory level or below it. That's why we put sw.js at ROOT level.
-  navigator.serviceWorker
-    .register('/sw.js')
-    .then((registration) => handleRegistration(registration))
-    .catch((error) => {console.log('ServiceWorker registration failed: ', error)})
+  // navigator.serviceWorker
+  //   .register('/sw.js')
+  //   .then((registration) => handleRegistration(registration))
+  //   .catch((error) => {console.log('ServiceWorker registration failed: ', error)})
 
-  // register message receiver
-  // https://dbwriteups.wordpress.com/2015/11/16/service-workers-part-3-communication-between-sw-and-pages/
-  navigator.serviceWorker.onmessage = (e) => {
-    console.log('SW: SW Broadcasting:', event);
-    const data = e.data
+  // // register message receiver
+  // // https://dbwriteups.wordpress.com/2015/11/16/service-workers-part-3-communication-between-sw-and-pages/
+  // navigator.serviceWorker.onmessage = (e) => {
+  //   console.log('SW: SW Broadcasting:', event);
+  //   const data = e.data
     
-    if(data.command == "UPDATE_FOUND"){
-      console.log("UPDATE_FOUND_BY_SW", data);
-      createSnackbar({
-        message: "Content updated.",
-        actionText:"refresh",
-        action: function(e){location.reload()}
-      })
-    }
-  }
+  //   if(data.command == "UPDATE_FOUND"){
+  //     console.log("UPDATE_FOUND_BY_SW", data);
+  //     createSnackbar({
+  //       message: "Content updated.",
+  //       actionText:"refresh",
+  //       action: function(e){location.reload()}
+  //     })
+  //   }
+  // }
 }
