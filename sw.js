@@ -21,7 +21,7 @@ const PRECACHE_LIST = [
   './js/snackbar.js',
   './img/icon_wechat.png',
   './img/avatar-ly.jpg',
-  './img/home-bg.png',
+  './img/home-bg.jpg',
   './img/404-bg.jpg',
   './css/ly-blog.min.css',
   './css/bootstrap.min.css',
