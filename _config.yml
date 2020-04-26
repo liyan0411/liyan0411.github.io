@@ -13,10 +13,11 @@ future: true
 
 # SNS settings
 RSS: false
-weibo_username:     小李子每天都在奋斗。
-zhihu_username:     leeyen
+weibo_username:     u/3199669483
+zhihu_username:     li-yan-54-67-35
 github_username:    liyan0411
-twitter_username:   leeyen
+# twitter_username:   leeyen
+junjin_username:    5b8e1e5cf265da433c64d059
 #facebook_username:  Mcyl
 #linkedin_username:  firstname-lastname-idxxxx
 
