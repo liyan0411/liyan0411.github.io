@@ -79,13 +79,13 @@ $ git clone git@github.com:Huxpro/huxblog-boilerplate.git
 
 ```
 # Site settings
-title: Leey Blog             # 你的博客网站标题
-SEOTitle: Leey Blog			# 在后面会详细谈到
+title: XXX Blog             # 你的博客网站标题
+SEOTitle: XXX Blog			# 在后面会详细谈到
 description: "Cool Blog"    # 随便说点，描述一下
 
 # SNS settings      
-github_username: liyan0411     # 你的github账号
-weibo_username: 小李子每天都在奋斗。      # 你的微博账号，底部链接会自动更新的。
+github_username: XXX     # 你的github账号
+weibo_username: XXX      # 你的微博账号，底部链接会自动更新的。
 
 # Build settings
 # paginate: 10              # 一页你准备放几篇文章
@@ -105,7 +105,7 @@ layout:     post
 title:      "Hello 2015"
 subtitle:   "Hello World, Hello Blog"
 date:       2015-01-29 12:00:00
-author:     "Leeyen"
+author:     "XXX"
 header-img: "img/post-bg-2015.jpg"
 tags:
     - Life
@@ -243,7 +243,7 @@ JavaScript 的压缩混淆、Less 的编译、Apache 2.0 许可通告的添加�
 
 #### SEO Title
 
-我的博客标题是 **Leey Blog”** 但是我想要在搜索的时候显示 **“李岩的博客 | Leey Blog”** ，这个就需要SEO Title来定义了。
+我的博客标题是 **“Hux Blog”** 但是我想要在搜索的时候显示 **“黄玄的博客 | Hux Blog”** ，这个就需要SEO Title来定义了。
 
 其实这个SEO Title就是定义了<head><title>标题</title></head>这个里面的东西和多说分享的标题，你可以自行修改的。
 
