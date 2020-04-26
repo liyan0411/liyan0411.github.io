@@ -210,14 +210,14 @@
     function _render(_hash){
         var _hash = _hash || window.location.hash;
         // en
-        // if(_hash == "#en"){
-        //     $select.selectedIndex = 1;
-        //     $en.style.display = "block";
-        //     $en.classList.add("active");
-        //     $zh.style.display = "none";
-        //     $zh.classList.remove("active");
-        // // zh by default
-        // }else{
+        if(_hash == "#en"){
+            $select.selectedIndex = 1;
+            $en.style.display = "block";
+            $en.classList.add("active");
+            $zh.style.display = "none";
+            $zh.classList.remove("active");
+        // zh by default
+        }else{
             // not trigger onChange, otherwise cause a loop call.
             $select.selectedIndex = 0;
             $zh.style.display = "block";

@@ -1,7 +1,7 @@
 > 写写代码，吃吃瓜。  
 > 离开世界之前，一切都是过程。
 
-Hey，我是李岩，现居地上海，二流本科毕业。主业:码农一枚；副业（你懂得，需要可以邮箱联系我哦）.偶尔写博客，于是就有了”[李岩](https://liyan0411.github.io)[博客](https://liyan0411.github.io)、[Github](http://github.com/liyan0411)、[掘金](https://juejin.im/user/5b8e1e5cf265da433c64d059) 等地带，绝招尚在开发中。
+Hey，我是李岩，现居地上海，二流本科毕业。主业:码农一枚；副业（你懂得，需要可以邮箱联系我哦）.偶尔写博客，于是就有了”[博客](https://liyan0411.github.io)、[Github](http://github.com/liyan0411)、[掘金](https://juejin.im/user/5b8e1e5cf265da433c64d059) 等地带，绝招尚在开发中。
 
 
 喜欢it开发工作，热爱生活，喜欢旅游，喜欢敲代码，喜欢由代码编译生成炫酷页面的过程，喜欢研究技术，致力于研究透前端。
