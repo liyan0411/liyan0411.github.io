@@ -7,7 +7,7 @@ Hey，我是李岩，现居地上海，二流本科毕业。主业:码农一枚�
 喜欢it开发工作，热爱生活，喜欢旅游，喜欢敲代码，喜欢由代码编译生成炫酷页面的过程，喜欢研究技术，致力于研究透前端。
 并在能成为全栈的路上努力。
 
-[我的简历](https://liyan0411.github.io/demo/aboutme/index.html)
+<!-- [我的简历](https://liyan0411.github.io/demo/aboutme/index.html) -->
 
 ##### Talks
 
