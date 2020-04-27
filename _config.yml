@@ -3,37 +3,41 @@ title: Leeyen
 SEOTitle: 李岩的博客 | Leeyen
 header-img: img/home-bg.jpg
 email: liyan_wo@163.com
-description: "关于程序与设计、数码玩家 | 李岩，Web & Mobile Lover，Software Engineer，UX Designer | 这里是 @leey李岩 的个人博客，与你一起发现更大的世界。"
-keyword: "李岩, Leey李岩, leeyen, 李岩的博客, leeyen Blog, 博客, 个人网站, 互联网, Web, JavaScript, 前端, 设计, 后台"
-url: "https://liyan0411.github.io"              # your host, for absolute URL
-baseurl: ""                             # for example, '/blog' if your blog hosted on 'host/blog'
+description: '关于程序与设计、数码玩家 | 李岩，Web & Mobile Lover，Software Engineer，UX Designer | 这里是 @leey李岩 的个人博客，与你一起发现更大的世界。'
+keyword: '李岩, Leey李岩, leeyen, 李岩的博客, leeyen Blog, 博客, 个人网站, 互联网, Web, JavaScript, 前端, 设计, 后台'
+url: 'https://liyan0411.github.io' # your host, for absolute URL
+baseurl: '' # for example, '/blog' if your blog hosted on 'host/blog'
 
 # Publish posts or collection documents with a future date.
 future: true
 
 # SNS settings
 RSS: false
-weibo_username:     u/3199669483
-zhihu_username:     li-yan-54-67-35
-github_username:    liyan0411
+weibo_username: u/3199669483
+zhihu_username: li-yan-54-67-35
+github_username: liyan0411
 # twitter_username:   leeyen
-junjin_username:    5b8e1e5cf265da433c64d059
-#facebook_username:  Mcyl
-#linkedin_username:  firstname-lastname-idxxxx
-
-
+# junjin_username: 5b8e1e5cf265da433c64d059
+#facebook_username:  leeyen
+linkedin_username:  岩-李-936598134
 
 # Build settings
 # from 2016, 'pygments' is unsupported on GitHub Pages. Use 'rouge' for highlighting instead.
 highlighter: rouge
 permalink: pretty
 paginate: 10
-exclude: ["less","node_modules","Gruntfile.js","package.json","README.md","README.zh.md"]
-anchorjs: true                          # if you want to customize anchor. check out line:181 of `post.html`
+exclude:
+  [
+    'less',
+    'node_modules',
+    'Gruntfile.js',
+    'package.json',
+    'README.md',
+    'README.zh.md',
+  ]
+anchorjs: true # if you want to customize anchor. check out line:181 of `post.html`
 # If you have timezone issue (e.g. #68) in China, uncomment to use this:
-#timezone: CN  
-
-
+#timezone: CN
 
 # Gems
 # from PR#40, to support local preview for Jekyll 3.0
@@ -41,15 +45,13 @@ anchorjs: true                          # if you want to customize anchor. check
 # `$ gem install jekyll-paginate`
 plugins: [jekyll-paginate]
 
-
-
 # Markdown settings
 # replace redcarpet to kramdown,
 # although redcarpet can auto highlight code, the lack of header-id make the catalog impossible, so I switch to kramdown
 # document: http://jekyllrb.com/docs/configuration/#kramdown
 markdown: kramdown
 kramdown:
-  input: GFM                            # use Github Flavored Markdown !important
+  input: GFM # use Github Flavored Markdown !important
   syntax_highlighter_opts:
     span:
       line_numbers: false
@@ -57,81 +59,49 @@ kramdown:
       line_numbers: true
       start_line: 1
 
-
-
 # Disqus settings
-disqus_username: Mcyl
+disqus_username: Leey
 
 # Netease settings
 netease_comment: false
 
-
-
 # Analytics settings
-# Baidu Analytics 
+# Baidu Analytics
 # ba_track_id: [your track id]
 
 # Google Analytics
-ga_track_id: 'UA-49627206-1'            # Format: UA-xxxxxx-xx
+ga_track_id: 'UA-49627206-1' # Format: UA-xxxxxx-xx
 ga_domain: mochengyanliu.github.io
 
-
-
 # Sidebar settings
-sidebar: true                           # whether or not using Sidebar.
-sidebar-about-description: "For the next quantum leap<br>离开世界之前，一切都是过程"
-sidebar-avatar: /img/avatar-Mcyl-ny.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
-
-
+sidebar: true # whether or not using Sidebar.
+sidebar-about-description: 'For the next quantum leap<br>离开世界之前，一切都是过程'
+sidebar-avatar: /img/avatar-Leey-ny.jpg # use absolute URL, seeing it's used in both `/` and `/about/`
 
 # Featured Tags
-featured-tags: true                     # whether or not using Feature-Tags
-featured-condition-size: 1              # A tag will be featured if the size of it is more than this condition value
-
-
+featured-tags: true # whether or not using Feature-Tags
+featured-condition-size: 1 # A tag will be featured if the size of it is more than this condition value
 
 # Progressive Web Apps
-chrome-tab-theme-color: "#000000"
+chrome-tab-theme-color: '#000000'
 service-worker: true
-
-
 
 # MathJax rendering for layout:page (e.g. post preview)
 page-mathjax: false
 
-
-
 # Friends
-friends: [
-    {
-        title: "开源中国社区 ",
-        href: "http://www.oschina.net/"
-    },{
-        title: "麦子学院",
-        href: "http://www.maiziedu.com/"
-    },{
-        title: "慕课网",
-        href: "http://www.imooc.com/"
-    },{
-        title: "码农网",
-        href: "http://www.codeceo.com/"
-    },{
-        title: "推酷",
-        href: "http://course.tuicool.com/"
-    },{
-        title: "中国IT实验室",
-        href: "http://www.chinaitlab.com/"
-    },{
-        title: "开源在线工具",
-        href: "http://tool.oschina.net/"
-    },{
-        title: "菜鸟窝",
-        href: "http://www.cniao5.com/"
-    },{
-        title: "百度传课",
-        href: "http://www.chuanke.com/"
-    },{
-        title: "博客园",
-        href: "https://www.cnblogs.com/"
-    }
-]
+friends:
+  [
+    { title: '思否', href: 'https://segmentfault.com/' },
+    { title: '开源中国社区 ', href: 'http://www.oschina.net/' },
+    { title: '麦子学院', href: 'http://www.maiziedu.com/' },
+    { title: '慕课网', href: 'http://www.imooc.com/' },
+    { title: '码农网', href: 'http://www.codeceo.com/' },
+    { title: '推酷', href: 'http://course.tuicool.com/' },
+    { title: '中国IT实验室', href: 'http://www.chinaitlab.com/' },
+    { title: '开源在线工具', href: 'http://tool.oschina.net/' },
+    { title: '菜鸟窝', href: 'http://www.cniao5.com/' },
+    { title: '百度传课', href: 'http://www.chuanke.com/' },
+    { title: '掘金', href: 'https://juejin.im/' },
+    { title: '程序猿客栈', href: 'https://www.proginn.com/' },
+  ]
