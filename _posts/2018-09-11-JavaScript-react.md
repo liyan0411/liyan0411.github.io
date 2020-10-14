@@ -4,7 +4,7 @@ title:      "react入门"
 subtitle:   " \"react众所周知的前端3大主流框架之一，由于出色的性能，完善的周边设施风头一时无两\""
 date:       2018-09-11 16:56:39
 author:     "小李子（Leey）"
-header-img: "img/post-bg-2015.jpg"
+header-img: "img/post-bg-re-vs-ng2.jpg"
 catalog: true
 tags:
     - React
